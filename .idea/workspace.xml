@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="update">
+    <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="room class finished, waiting for the tests">
       <change afterPath="$PROJECT_DIR$/src/Patient.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/TestP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assignment1/Airport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assignment1/Room.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HelloWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment1/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment1/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +133,7 @@
       <workItem from="1672969707474" duration="1000" />
       <workItem from="1673037459306" duration="117000" />
       <workItem from="1673039909073" duration="4621000" />
-      <workItem from="1675726284392" duration="16494000" />
+      <workItem from="1675726284392" duration="20589000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1673040166236</created>
@@ -144,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673040166237</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update">
+      <created>1675838301045</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675838301045</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +157,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="room class finished, waiting for the tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="room class finished, waiting for the tests" />
   </component>
 </project>
