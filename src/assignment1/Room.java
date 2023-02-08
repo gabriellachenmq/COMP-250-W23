@@ -3,8 +3,8 @@ package assignment1;
 
 
 public class Room {
-    private String room_type;
-    private int room_price;
+    private String roomType;
+    private int roomPrice;
     private boolean availability;
 
     public Room(String r) {
@@ -13,29 +13,29 @@ public class Room {
             throw new IllegalArgumentException("No room of such type can be created");
         }
         this.availability = true;
-        this.room_type = r;
-        if (room_type.equals("double"))
-            room_price = 9000;
-        if (room_type.equals("queen"))
-            room_price = 11000;
-        if (room_type.equals("king"))
-            room_price = 15000;
+        this.roomType = r;
+        if (roomType.equals("double"))
+            roomPrice = 9000;
+        if (roomType.equals("queen"))
+            roomPrice = 11000;
+        if (roomType.equals("king"))
+            roomPrice = 15000;
 
     }
 //Copy constructor
     public Room(Room room){
-        this.room_type = room.room_type;
-        this.room_price = room.room_price;
+        this.roomType = room.roomType;
+        this.roomPrice = room.roomPrice;
         this.availability = room.availability;
 
     }
 
     public String getType(){
-        return this.room_type;
+        return this.roomType;
     }
 
     public int getPrice(){
-        return this.room_price;
+        return this.roomPrice;
     }
 
     public boolean changeAvailability(){
@@ -43,50 +43,48 @@ public class Room {
         return this.availability;
     }
 
-    public static Room findAvailableRoom(Room[] room_list, String type_need){
+    public static Room findAvailableRoom(Room[] roomList, String typeNeed){
 
-        Room avaliable_room = null;
+        Room availableRoom = null;
 
-        for (int i = 0; i<room_list.length; i++){
-            if (room_list[i] == null)
+        for (int i = 0; i<roomList.length; i++){
+            if (roomList[i] == null)
                 continue;
-            else if (room_list[i].room_type.equals(type_need)) {
-                avaliable_room = room_list[i];
+            else if (roomList[i].roomType.equals(typeNeed)) {
+                availableRoom = roomList[i];
                 break;
             }
         }
-        return avaliable_room;
+        return availableRoom;
     }
 
-    public static boolean makeRoomAvailable(Room[] room_ary, String room_changed){
+    public static boolean makeRoomAvailable(Room[] roomAry, String roomChanged){
 
-        for (int i=0; i<room_ary.length; i++){
-            if (room_ary[i] == null)
+        for (int i=0; i<roomAry.length; i++){
+            if (roomAry[i] == null)
                 continue;
-            else if (room_ary[i].room_type.equals(room_changed) && !room_ary[i].availability) {
-                room_ary[i].availability = true;
+            else if (roomAry[i].roomType.equals(roomChanged) && !roomAry[i].availability) {
+                roomAry[i].availability = true;
                 return true;
             }
-        }
-        return false;
+
+        }return false;
+
     }
 
 
 
     public static void main(String[] args){
-
+/*
         Room room = new Room("double");
         Room copyRoom = new Room(room);
-        System.out.println(room == copyRoom);
+        System.out.println(room == copyRoom);*/
 
 
         /*Room[] rooms = {new Room("king"), null, new Room("queen"), new Room("double"),new Room("queen")};
         System.out.println(rooms[2].equals(Room.findAvailableRoom(rooms, "queen")));*/
 
-        /*Room room1 = new Room("double");
-        Room room2 = new Room("double");
-        Room[] rooms = {room1,room2} ;// Should go through room null without return false
-        System.out.println(makeRoomAvailable(rooms, "double"));*/
+
 
 
 
