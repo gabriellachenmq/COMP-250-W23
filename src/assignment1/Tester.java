@@ -83,6 +83,62 @@ class HotelTest {       // 7 points
         assertFalse(hotel1.cancelRoom("king"),
                 "Hotel: cancelRoom() did not return the correct value");
     }
-}
 
+}
+class FlightReservationTest {   // 3 points
+
+    @Test
+    @Tag("score:1")
+    @DisplayName("FlightReservation getCost() Test1")
+    void getCost() {
+        Airport airport1 = new Airport(44, 120, 100);
+        Airport airport2 = new Airport(50, 112, 110);
+        FlightReservation flightReservation1 = new FlightReservation("Alex", airport1, airport2);
+        assertEquals(5593, flightReservation1.getCost(),
+                "FlightReservation: getCost() returns the wrong cost.");
+    }
+
+    @Test
+    @Tag("score:1")
+    @DisplayName("FlightReservation equals() Test1")
+    void testEquals1() {
+        Airport airport1 = new Airport(44, 120, 100);
+        Airport airport2 = new Airport(50, 112, 110);
+
+        FlightReservation flightReservation1 = new FlightReservation("Alex", airport1, airport2);
+        FlightReservation flightReservation2 = flightReservation1;
+
+        assertTrue(flightReservation1.equals(flightReservation2),
+                "FlightReservation: equals() returns the wrong value");
+    }
+    @Test
+    @Tag("score:1") @DisplayName("FlightReservation equals() Test2")
+    void testEquals2() {
+        Airport airport1 = new Airport(44, 120, 100);
+        Airport airport2 = new Airport(50, 112, 110);
+
+        FlightReservation flightReservation1 = new FlightReservation("Alex", airport1, airport2);
+        FlightReservation flightReservation2 = new FlightReservation("Alex", airport2, airport1);
+
+        assertFalse(flightReservation1.equals(flightReservation2),
+                "FlightReservation: equals() returns the wrong value.");
+    }
+
+
+    // check equals(null)
+    @Test
+    @Tag("score:1") @DisplayName("FlightReservation equals() Test4")
+    void testEquals4() {
+        Airport airport1 = new Airport(44, 120, 100);
+        Airport airport2 = new Airport(50, 112, 110);
+
+        FlightReservation flightReservation1 = new FlightReservation("Alex", airport1, airport2);
+        FlightReservation flightReservation2 = new FlightReservation("Alex", airport1, airport2);
+
+        assertFalse(flightReservation1.equals(null),
+                "FlightReservation: equals() returns the wrong value");
+    }
+
+
+}
 
