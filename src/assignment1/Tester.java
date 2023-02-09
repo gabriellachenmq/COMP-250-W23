@@ -139,16 +139,21 @@ class FlightReservationTest {   // 3 points
                 "FlightReservation: equals() returns the wrong value");
     }
     // check equality with HotelReservation
-    /*@Test
-    @Tag("score:1") @DisplayName("BnBReservation equals() Test1")
-    void testEquals1() {
+
+    @Test
+    @Tag("score:1") @DisplayName("FlightReservation equals() Test5")
+    void testEquals5() {
         Room[] rooms = {new Room("double"), new Room("double")};
         Hotel hotel1 = new Hotel("Hotel1", rooms);
-        HotelReservation hotelReservation = new HotelReservation("Alex", hotel1, "double", 2);
-        BnBReservation bnBReservation = new BnBReservation("Alex", hotel1, "double", 2);
+        HotelReservation hotelReservation1 = new HotelReservation("Alex", hotel1, "double", 2);
+        HotelReservation hotelReservation2 = new HotelReservation("Alex", hotel1, "double", 2);
 
-        assertFalse(bnBReservation.equals(hotelReservation), "HotelReservation: equals() returns the wrong value");
-    }*/
+        Airport airport1 = new Airport(44, 120, 100);
+        Airport airport2 = new Airport(50, 112, 110);
+        FlightReservation flightReservation1 = new FlightReservation("Alex", airport1, airport2);
+
+        assertFalse(flightReservation1.equals(hotelReservation1), "HotelReservation: equals() returns the wrong value");
+    }
 
 
 }
@@ -233,6 +238,42 @@ class HotelReservationTest {    // 4 points
         FlightReservation flightReservation1 = new FlightReservation("Alex", airport1, airport2);
 
         assertFalse(hotelReservation1.equals(flightReservation1), "HotelReservation: equals() returns the wrong value");
+    }
+}
+
+class BnBReservationTest {      // 2 points
+    @Test
+    @Tag("score:1") @DisplayName("BnBReservation reservationName() Test1")
+    void reservationName() {
+        Room[] rooms = {new Room("double")};
+        Hotel hotel1 = new Hotel("Hotel1", rooms);
+
+        BnBReservation bnBReservation = new BnBReservation("Alex", hotel1, "double", 2);
+        assertEquals("Alex", bnBReservation.reservationName(),
+                "BnBReservation: getCost() returns the wrong name.");
+    }
+
+    @Test
+    @Tag("score:1") @DisplayName("BnBReservation getCost() Test1")
+    void getCost() {
+        Room[] rooms = {new Room("double")};
+        Hotel hotel1 = new Hotel("Hotel1", rooms);
+
+        BnBReservation bnBReservation = new BnBReservation("Alex", hotel1, "double", 2);
+        assertEquals(20000, bnBReservation.getCost(),
+                "BnBReservation: getCost() returns the wrong value.");
+    }
+
+    // check equality with HotelReservation
+    @Test
+    @Tag("score:1") @DisplayName("BnBReservation equals() Test1")
+    void testEquals1() {
+        Room[] rooms = {new Room("double"), new Room("double")};
+        Hotel hotel1 = new Hotel("Hotel1", rooms);
+        HotelReservation hotelReservation = new HotelReservation("Alex", hotel1, "double", 2);
+        BnBReservation bnBReservation = new BnBReservation("Alex", hotel1, "double", 2);
+
+        assertFalse(bnBReservation.equals(hotelReservation), "HotelReservation: equals() returns the wrong value");
     }
 }
 
