@@ -360,3 +360,150 @@ class BasketTest {      // 7 points
         }
     }
 }
+class CustomerTest {    // 7 points
+    @Test
+    @Tag("score:1")
+    @DisplayName("Customer Constructor Test1")
+    void customerConstructor_Test1() {
+        Customer customer = new Customer("bob", 100);
+        assertEquals("bob", customer.getName(),
+                "Customer: getName() did not return the correct name");
+        assertEquals(100, customer.getBalance(),
+                "Customer: getBalance() did not return the correct balance");
+        assertEquals(0, customer.getBasket().getNumOfReservations(),
+                "Customer: getBasket() did not return the correct number of reservations");
+    }
+
+    @Test
+    @Tag("score:1")
+    @DisplayName("Customer addFunds() Test1")
+    void addFunds_Test1() {
+        Customer customer = new Customer("bob", 100);
+        assertEquals(101, customer.addFunds(1),
+                "Customer: addFunds() did not return the correct funds");
+        assertEquals(101, customer.getBalance(),
+                "Customer: getBalance() did not return the correct balance");
+    }
+
+    @Test
+    @Tag("score:1")
+    @DisplayName("Customer addToBasket(Reservation) Test1")
+    void addToBasket_Test1_Reservation() {
+        Customer customer = new Customer("bob", 100);
+        Room[] rooms = {new Room("double")};
+        Hotel hotel = new Hotel("barcelo", rooms);
+        HotelReservation reservation = new HotelReservation("bob", hotel, "double", 2);
+
+        assertEquals(1, customer.addToBasket(reservation),
+                "Customer: addToBasket(Reservation) did not return the correct number of reservations in the basket");
+    }
+    @Test
+    @Tag("score:1") @DisplayName("Customer addToBasket(HotelReservation) Test2")
+    void addToBasket_Test2_Reservation() {
+        Customer customer = new Customer("bob", 100);
+        Room[] rooms = {new Room("double")};
+        Hotel hotel = new Hotel("barcelo", rooms);
+
+        assertEquals(1, customer.addToBasket(hotel, "double", 2, false),
+                "Customer: addToBasket() for the Hotel type did not return the correct number of reservations in the basket");
+    }
+
+    @Test
+    @Tag("score:1") @DisplayName("Customer addToBasket(Without Breakfast) Test3")
+    void addToBasket_Test3_Reservation() {
+        Customer customer = new Customer("Killua", 100);
+        Room[] rooms = {new Room("double")};
+        Hotel hotel = new Hotel("Greed Island", rooms);
+        customer.addToBasket(hotel, "double", 2, false);
+
+        int totalPrice = customer.getBasket().getTotalCost();
+
+        assertEquals(18000, totalPrice,
+                "Customer: addToBasket() for the Hotel type did not return the correct number of reservations in the basket");
+    }
+    @Test
+    @Tag("score:1") @DisplayName("Customer addToBasket(With Breakfast) Test4")
+    void addToBasket_Test4_Reservation() {
+        Customer customer = new Customer("Killua", 100);
+        Room[] rooms = {new Room("double")};
+        Hotel hotel = new Hotel("Greed Island", rooms);
+        customer.addToBasket(hotel, "double", 2, true);
+
+        int totalPrice = customer.getBasket().getTotalCost();
+
+        assertEquals(20000, totalPrice,
+                "Customer: addToBasket() for the Hotel type did not return the correct number of reservations in the basket");
+    }
+
+
+    @Test
+    @Tag("score:1") @DisplayName("Customer addToBasket(FlightReservation) Test5")
+    void addToBasket_Test5_Reservation() {
+        Customer customer = new Customer("bob", 100);
+        Airport airport1 = new Airport(100, 200, 1000);
+        Airport airport2 = new Airport(10, 20, 2000);
+
+        assertEquals(1, customer.addToBasket(airport1, airport2),
+                "Customer: addToBasket() for the Flight type did not return the correct number of reservations in the basket");
+    }
+    @Test
+    @Tag("score:1") @DisplayName("Customer removeFromBasket(Reservation) Test1")
+    void removeFromBasket_Test1() {
+        Customer customer = new Customer("bob", 100);
+
+        Room[] rooms = {new Room("double")};
+        Hotel hotel = new Hotel("barcelo", rooms);
+        Reservation reservation = new HotelReservation("bob", hotel, "double", 2);
+        customer.addToBasket(reservation);
+
+        assertTrue(customer.removeFromBasket(reservation),
+                "Customer: removeFromBasket(Reservation) did not return the correct value");
+    }
+
+
+    @Test
+    @Tag("score:1") @DisplayName("Customer removeFromBasket(Reservation) Test2")
+    void removeFromBasket_Test2() {
+        Customer customer = new Customer("Bob", 100);
+        Customer customer2 = new Customer("Not Bob", 100);
+
+        Room[] rooms = {new Room("double")};
+        Hotel hotel = new Hotel("Average Hotel", rooms);
+        Reservation reservation = new HotelReservation("Bob", hotel, "double", 2);
+        customer.addToBasket(reservation);
+
+        assertFalse(customer2.removeFromBasket(reservation),
+                "Customer: removeFromBasket(Reservation) did not return the correct value");
+    }
+    // check if it works when we remove null
+    @Test
+    @Tag("score:1") @DisplayName("Customer removeFromBasket(Reservation) Test3")
+    void removeFromBasket_Test3() {
+        Customer customer = new Customer("Bob", 100);
+
+        Room[] rooms = {};
+        Hotel hotel = new Hotel("Average Hotel", rooms);
+
+        Airport a1 = new Airport(44, 120, 100);
+        Airport a2 = new Airport(45, 120, 100);
+
+        assertFalse(customer.removeFromBasket(null),
+                "Customer: removeFromBasket(Reservation) did not return the correct value");
+    }
+
+    @Test
+    @Tag("score:1") @DisplayName("Customer checkOut() Test1")
+    void checkout_Tes1() {
+        Customer customer = new Customer("bob", 100000);
+
+        Room[] rooms = {new Room("double")};
+        Hotel hotel = new Hotel("barcelo", rooms);
+        HotelReservation reservation = new HotelReservation("bob", hotel, "double", 2);
+        customer.addToBasket(reservation);
+
+        assertEquals(82000, customer.checkOut(),
+                "Customer: checkOut() did not return the correct balance after checkOut");
+    }
+
+
+}
