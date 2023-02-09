@@ -277,3 +277,86 @@ class BnBReservationTest {      // 2 points
     }
 }
 
+class BasketTest {      // 7 points
+
+    @Test
+    @Tag("score:1")
+    @DisplayName("Basket add() Test2")
+    void addTest2() {
+        Basket basket = new Basket();
+        int number = 0;
+        for (int i = 0; i < 30; i++) {
+            number = basket.add(new HotelReservation("Marty", new Hotel("Gatewater", new Room[]{new Room("queen")}), "queen", 4));
+        }
+        assertEquals(30, number, "Basket: add() returns the wrong number of reservations now in the basket when adding many items.");
+    }
+
+    @Test
+    @Tag("score:2")
+    @DisplayName("Basket getProducts() Test1")
+    void getProducts2() {
+        Basket basket = new Basket();
+        HotelReservation hotelReservation1 = new HotelReservation("Alex", new Hotel("Hotel1", new Room[]{new Room("double")}), "double", 2);
+        FlightReservation flightReservation1 = new FlightReservation("Bob", new Airport(44, 120, 100), new Airport(50, 112, 110));
+
+        basket.add(hotelReservation1);
+        basket.add(flightReservation1);
+
+        Reservation[] expected = {hotelReservation1, flightReservation1};
+        Reservation[] output = basket.getProducts();
+
+        for (int i = 0; i < expected.length; i++) {
+            assertEquals(expected[i], output[i],
+                    "Basket: getProducts() returns the wrong order of reservations.");
+        }
+    }
+    @Test
+    @Tag("score:1") @DisplayName("Basket getNumOfReservations Test1")
+    void getNumOfReservations() {
+        Basket basket1 = new Basket();
+        Reservation reservation1 = new BasketTest.FakeReservation("Alex");
+        Reservation reservation2 = new BasketTest.FakeReservation("Bob");
+
+        basket1.add(reservation1);
+        basket1.add(reservation2);
+
+        assertEquals(2, basket1.getNumOfReservations(),
+                "Basket: getNumOfReservations() returns the wrong number of reservations");
+    }
+
+
+    @Test
+    @Tag("score:1") @DisplayName("Basket remove() Test1")
+    void remove() {
+        Basket basket1 = new Basket();
+        Airport airport1 = new Airport(44, 120, 100);
+        Airport airport2 = new Airport(50, 112, 110);
+        FlightReservation reservation1 = new FlightReservation("Alex", airport1, airport2);
+
+        basket1.add(reservation1);
+
+        boolean test = basket1.remove(reservation1);
+
+        assertEquals(0, basket1.getNumOfReservations(),
+                "Basket: remove() didn't remove the reservation");
+
+        assertTrue(test, "Basket: remove() returns the wrong value");
+
+    }
+    private static class FakeReservation extends Reservation {
+
+        public FakeReservation(String name) {
+            super(name);
+        }
+
+        @Override
+        public int getCost() {
+            return 0;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            return false;
+        }
+    }
+}

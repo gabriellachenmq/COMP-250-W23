@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="finished HotelReservation">
+    <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="finished BnBReservation">
       <change afterPath="$PROJECT_DIR$/src/Patient.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/TestP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assignment1/BnBReservation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assignment1/Basket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HelloWorld.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assignment1/Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment1/Tester.java" afterDir="false" />
@@ -68,7 +68,38 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.BnBReservationTest">
+  <component name="RunManager" selected="JUnit.BasketTest">
+    <configuration name="BasketTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="COMP250" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment1" />
+      <option name="MAIN_CLASS_NAME" value="assignment1.BasketTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasketTest.addTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="COMP250" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment1" />
+      <option name="MAIN_CLASS_NAME" value="assignment1.BasketTest" />
+      <option name="METHOD_NAME" value="addTest2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BnBReservationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
@@ -116,44 +147,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HotelReservationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="COMP250" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignment1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="assignment1" />
-      <option name="MAIN_CLASS_NAME" value="assignment1.HotelReservationTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HotelReservationTest.testEquals5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="COMP250" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignment1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="assignment1" />
-      <option name="MAIN_CLASS_NAME" value="assignment1.HotelReservationTest" />
-      <option name="METHOD_NAME" value="testEquals5" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BasketTest" />
+        <item itemvalue="JUnit.BasketTest.addTest2" />
         <item itemvalue="JUnit.BnBReservationTest" />
         <item itemvalue="JUnit.FlightReservationTest.testEquals1" />
         <item itemvalue="JUnit.FlightReservationTest.testEquals5" />
-        <item itemvalue="JUnit.HotelReservationTest.testEquals5" />
-        <item itemvalue="JUnit.HotelReservationTest" />
       </list>
     </recent_temporary>
   </component>
@@ -169,7 +169,7 @@
       <workItem from="1672969707474" duration="1000" />
       <workItem from="1673037459306" duration="117000" />
       <workItem from="1673039909073" duration="4621000" />
-      <workItem from="1675726284392" duration="42980000" />
+      <workItem from="1675726284392" duration="47225000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1673040166236</created>
@@ -220,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675918261004</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="finished BnBReservation">
+      <created>1675919757179</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1675919757179</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,6 +240,7 @@
     <MESSAGE value="finished abstract Reservation" />
     <MESSAGE value="finished FlightReservation" />
     <MESSAGE value="finished HotelReservation" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished HotelReservation" />
+    <MESSAGE value="finished BnBReservation" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished BnBReservation" />
   </component>
 </project>
