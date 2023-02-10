@@ -16,7 +16,7 @@ public class Hotel {
 
     public int reserveRoom(String roomReserved) {
 
-        if (Room.findAvailableRoom(this.hotelRooms, roomReserved) == null)
+        if (roomReserved == null || Room.findAvailableRoom(this.hotelRooms, roomReserved) == null)
             throw new IllegalArgumentException("No room of such type can be created");
 
         Room newRoom = Room.findAvailableRoom(this.hotelRooms, roomReserved);
@@ -26,6 +26,9 @@ public class Hotel {
     }
 
     public boolean cancelRoom(String roomCanceled){
+
+        if (roomCanceled == null)
+            return false;
         Room oldRoom = new Room(roomCanceled);
         return oldRoom.makeRoomAvailable(this.hotelRooms, roomCanceled);
 
