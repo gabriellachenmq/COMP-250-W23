@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="part 1">
-      <change afterPath="$PROJECT_DIR$/src/assignment2/MyStack.java" afterDir="false" />
+    <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="part 1 stack">
+      <change afterPath="$PROJECT_DIR$/src/assignment2/MyQueue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +36,9 @@
         <option name="url" value="https://github.com/gabriellachenmq/COMP-250-W23.git" />
       </UrlAndAccount>
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/Library/Java/JavaVirtualMachines/openjdk-19.0.1/Contents/Home/lib/src.zip!/java.base/java/lang/Object.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -169,7 +172,7 @@
       <workItem from="1676355155399" duration="420000" />
       <workItem from="1676358507353" duration="46000" />
       <workItem from="1676401320107" duration="1124000" />
-      <workItem from="1678856010440" duration="4780000" />
+      <workItem from="1678856010440" duration="5661000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1673040166236</created>
@@ -255,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678931367116</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="part 1 stack">
+      <created>1678932469778</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1678932469778</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,6 +284,7 @@
     <MESSAGE value="final check" />
     <MESSAGE value="final final update" />
     <MESSAGE value="part 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="part 1" />
+    <MESSAGE value="part 1 stack" />
+    <option name="LAST_COMMIT_MESSAGE" value="part 1 stack" />
   </component>
 </project>
