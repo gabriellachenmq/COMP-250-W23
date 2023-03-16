@@ -23,13 +23,16 @@ public class MyDoublyLinkedList<E> extends MyLinkedList<E>{
 
     public void addFirst(E element){
         DNode nNode = new DNode();
-        if (head == null){
+        nNode.element = element;
+        nNode.next = null;
+        nNode.prev = null;
+        if (isEmpty()){
             head = nNode;
             tail = nNode;
         }
         else{
-            nNode.next = head;
             head.prev = nNode;
+            nNode.next = head;
             head = nNode;
         }
         size++;
@@ -37,14 +40,17 @@ public class MyDoublyLinkedList<E> extends MyLinkedList<E>{
 
     public void addLast(E element){
         DNode nNode = new DNode();
-        if (tail == null){
+        nNode.element = element;
+        nNode.next = null;
+        nNode.prev = null;
+        if (isEmpty()){
             head = nNode;
             tail = nNode;
         }
         else{
-            nNode.next = tail;
-            tail.prev = nNode;
-            tail = nNode;
+           nNode.prev = tail;
+           tail.next = nNode;
+           tail = nNode;
         }
         size++;
     }
@@ -96,13 +102,16 @@ public class MyDoublyLinkedList<E> extends MyLinkedList<E>{
     }
 
     public boolean equals(Object obj){
-        if (obj instanceof MyDoublyLinkedList){
+        if (obj instanceof MyDoublyLinkedList) {
             MyDoublyLinkedList otherOne = (MyDoublyLinkedList) obj;
             if (size != otherOne.size){
                 return false;
             }
+            if (size == 0){
+                return true;
+            }
             Iterator<E> iterator = iterator();
-            Iterator otherIterator = otherOne.iterator();
+            Iterator<E> otherIterator = otherOne.iterator();
             while (iterator.hasNext() && otherIterator.hasNext()) {
                 E element = iterator.next();
                 Object otherEle = otherIterator.next();

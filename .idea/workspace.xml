@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="part 1 stack">
-      <change afterPath="$PROJECT_DIR$/src/assignment2/MyQueue.java" afterDir="false" />
+    <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="part 1 queue">
+      <change afterPath="$PROJECT_DIR$/src/assignment2/Minitester.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment2/MyDoublyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/MyDoublyLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment2/MyQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/MyQueue.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,89 +70,93 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.FlightReservationTest">
-    <configuration name="BasketTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.Part1Test">
+    <configuration name="Part1Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="assignment1.*" />
+          <option name="PATTERN" value="assignment2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="assignment1" />
-      <option name="MAIN_CLASS_NAME" value="assignment1.BasketTest" />
+      <option name="PACKAGE_NAME" value="assignment2" />
+      <option name="MAIN_CLASS_NAME" value="assignment2.Part1Test" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BnBReservationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Part1Test.shouldAdd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="assignment1.*" />
+          <option name="PATTERN" value="assignment2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="assignment1" />
-      <option name="MAIN_CLASS_NAME" value="assignment1.BnBReservationTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="assignment2" />
+      <option name="MAIN_CLASS_NAME" value="assignment2.Part1Test" />
+      <option name="METHOD_NAME" value="shouldAdd" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FlightReservationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Part1Test.shouldCheckEqual" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="assignment1.*" />
+          <option name="PATTERN" value="assignment2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="assignment1" />
-      <option name="MAIN_CLASS_NAME" value="assignment1.FlightReservationTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="assignment2" />
+      <option name="MAIN_CLASS_NAME" value="assignment2.Part1Test" />
+      <option name="METHOD_NAME" value="shouldCheckEqual" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HotelReservationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Part1Test.shouldPeek" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="assignment1.*" />
+          <option name="PATTERN" value="assignment2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="assignment1" />
-      <option name="MAIN_CLASS_NAME" value="assignment1.HotelReservationTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="assignment2" />
+      <option name="MAIN_CLASS_NAME" value="assignment2.Part1Test" />
+      <option name="METHOD_NAME" value="shouldPeek" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReservationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Part1Test.shouldRemove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="assignment1.*" />
+          <option name="PATTERN" value="assignment2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="assignment1" />
-      <option name="MAIN_CLASS_NAME" value="assignment1.ReservationTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="assignment2" />
+      <option name="MAIN_CLASS_NAME" value="assignment2.Part1Test" />
+      <option name="METHOD_NAME" value="shouldRemove" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FlightReservationTest" />
-        <item itemvalue="JUnit.BasketTest" />
-        <item itemvalue="JUnit.BnBReservationTest" />
-        <item itemvalue="JUnit.HotelReservationTest" />
-        <item itemvalue="JUnit.ReservationTest" />
+        <item itemvalue="JUnit.Part1Test" />
+        <item itemvalue="JUnit.Part1Test.shouldCheckEqual" />
+        <item itemvalue="JUnit.Part1Test.shouldPeek" />
+        <item itemvalue="JUnit.Part1Test.shouldRemove" />
+        <item itemvalue="JUnit.Part1Test.shouldAdd" />
       </list>
     </recent_temporary>
   </component>
@@ -172,7 +178,7 @@
       <workItem from="1676355155399" duration="420000" />
       <workItem from="1676358507353" duration="46000" />
       <workItem from="1676401320107" duration="1124000" />
-      <workItem from="1678856010440" duration="5661000" />
+      <workItem from="1678856010440" duration="11716000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1673040166236</created>
@@ -265,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678932469778</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="part 1 queue">
+      <created>1678933500139</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1678933500139</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,6 +298,7 @@
     <MESSAGE value="final final update" />
     <MESSAGE value="part 1" />
     <MESSAGE value="part 1 stack" />
-    <option name="LAST_COMMIT_MESSAGE" value="part 1 stack" />
+    <MESSAGE value="part 1 queue" />
+    <option name="LAST_COMMIT_MESSAGE" value="part 1 queue" />
   </component>
 </project>

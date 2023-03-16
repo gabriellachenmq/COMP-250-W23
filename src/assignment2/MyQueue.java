@@ -24,7 +24,27 @@ public class MyQueue<E> {
         queue.clear();
     }
 
-    public boolean equals(Object obj){
-        return queue.equals(obj);
+    public int getSize() {
+        return queue.getSize();
     }
+
+    public boolean equals(Object obj) {
+        if (obj instanceof MyQueue) {
+            MyQueue<E> other = (MyQueue<E>) obj;
+            if (getSize() != other.getSize()) {
+                return false;
+            }
+            if (getSize() == 0){
+                return true;
+            }
+            while (!isEmpty()) {
+                if (!dequeue().equals(other.dequeue())) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
 }
