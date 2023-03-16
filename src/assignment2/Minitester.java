@@ -287,6 +287,7 @@ class Part1Test {
         list2.add(2);
         list2.add(3);
 
+
         assertTrue(list1.equals(list2));
     }
 

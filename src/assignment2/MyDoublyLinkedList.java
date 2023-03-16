@@ -107,7 +107,7 @@ public class MyDoublyLinkedList<E> extends MyLinkedList<E>{
             if (size != otherOne.size){
                 return false;
             }
-            if (size == 0){
+            if (size == 0 && otherOne.size == 0){
                 return true;
             }
             Iterator<E> iterator = iterator();

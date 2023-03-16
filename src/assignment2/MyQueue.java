@@ -31,20 +31,35 @@ public class MyQueue<E> {
     public boolean equals(Object obj) {
         if (obj instanceof MyQueue) {
             MyQueue<E> other = (MyQueue<E>) obj;
-            if (getSize() != other.getSize()) {
+            if (this.getSize() != other.getSize()) {
                 return false;
             }
-            if (getSize() == 0){
-                return true;
-            }
-            while (!isEmpty()) {
-                if (!dequeue().equals(other.dequeue())) {
+            MyQueue<E> copy1 = this.copy();
+            MyQueue<E> copy2 = other.copy();
+            while (!copy1.isEmpty()) {
+                E element1 = copy1.dequeue();
+                E element2 = copy2.dequeue();
+                if (!element1.equals(element2)) {
                     return false;
                 }
             }
             return true;
         }
         return false;
+    }
+    private MyQueue<E> copy() {
+        MyQueue<E> copy = new MyQueue<E>();
+        MyQueue<E> original = new MyQueue<E>();
+        while (!this.isEmpty()) {
+            E element = this.dequeue();
+            copy.enqueue(element);
+            original.enqueue(element);
+        }
+        while (!original.isEmpty()) {
+            E element = original.dequeue();
+            this.enqueue(element);
+        }
+        return copy;
     }
 
 }
