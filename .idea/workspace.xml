@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="final check">
-      <change afterPath="$PROJECT_DIR$/src/Patient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TestP.java" afterDir="false" />
+    <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="final final update">
+      <change afterPath="$PROJECT_DIR$/src/assignment2/MyDoublyLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assignment2/MyLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assignment2/MyList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HelloWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment1/Basket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment1/Basket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment1/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment1/Hotel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment1/Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment1/Tester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +18,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -168,7 +166,12 @@
       <workItem from="1673037459306" duration="117000" />
       <workItem from="1673039909073" duration="4621000" />
       <workItem from="1675726284392" duration="53485000" />
-      <workItem from="1676068434900" duration="1845000" />
+      <workItem from="1676068434900" duration="2254000" />
+      <workItem from="1676328142476" duration="200000" />
+      <workItem from="1676355155399" duration="420000" />
+      <workItem from="1676358507353" duration="46000" />
+      <workItem from="1676401320107" duration="1124000" />
+      <workItem from="1678856010440" duration="4249000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1673040166236</created>
@@ -240,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675931118027</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="final final update">
+      <created>1676070930899</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1676070930899</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,6 +267,7 @@
     <MESSAGE value="finished Basket" />
     <MESSAGE value="finished Customer" />
     <MESSAGE value="final check" />
-    <option name="LAST_COMMIT_MESSAGE" value="final check" />
+    <MESSAGE value="final final update" />
+    <option name="LAST_COMMIT_MESSAGE" value="final final update" />
   </component>
 </project>
