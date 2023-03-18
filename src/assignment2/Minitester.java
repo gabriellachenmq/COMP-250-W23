@@ -400,3 +400,450 @@ class Part1Test {
         assertEquals(0, stack.getSize());
     }
 }
+
+class Part2Test {
+
+    // ==================== POSITION CLASS TEST =================== //
+    @Test
+    @Tag("score:1")
+    @DisplayName("Position move() test1")
+    void positionMoveDir1() {
+        Position pos = new Position(7, 5);
+        pos.moveWest();
+        pos.moveNorth();
+
+        assertEquals(6, pos.getX());
+        assertEquals(4, pos.getY());
+
+        pos = new Position(7, 5);
+        pos.moveEast();
+        pos.moveSouth();
+
+        assertEquals(8, pos.getX());
+        assertEquals(6, pos.getY());
+    }
+
+    @Test
+    @Tag("score:1")
+    @DisplayName("Position reset() test1")
+    void positionReset1() {
+        Position pos = new Position(7, 5);
+
+        pos.reset(6, 9);
+
+        assertEquals(6, pos.getX());
+        assertEquals(9, pos.getY());
+
+        Position pos2 = new Position(9, 6);
+
+        pos.reset(pos2);
+        assertEquals(9, pos.getX());
+        assertEquals(6, pos.getY());
+    }
+
+    @Test
+    @Tag("score:1")
+    @DisplayName("Position getDistance() test")
+    void positionGetDistance() {
+        Position pos = new Position(7, 5);
+        Position pos2 = new Position(0, 5);
+
+        assertEquals(7, Position.getDistance(pos, pos2));
+    }
+
+    @Test
+    @Tag("score:1")
+    @DisplayName("Position equals() test1")
+    void positionEqual1() {
+        Position pos = new Position(7, 5);
+        Position pos2 = new Position(9, 6);
+
+        assertFalse(pos.equals(pos2));
+
+        pos2.reset(pos);
+
+        assertTrue(pos.equals(pos2));
+    }
+
+    // Testing Basic movement functionality
+    @Test
+    void posMove_1() {
+        Position p = new Position(0, 0);
+        p.moveNorth();
+        assertEquals(new Position(0, -1), p);
+        p.moveEast();
+        assertEquals(new Position(1, -1), p);
+        p.moveSouth();
+        assertEquals(new Position(1, 0), p);
+        p.moveWest();
+        assertEquals(new Position(0, 0), p);
+    }
+
+
+    // ==================== TARGETQUEUE CLASS TEST =================== //
+    @Test
+    @Tag("score:1")
+    @DisplayName("TargetQueue addTargets() test1")
+    void tqAddTargets1() {
+        TargetQueue test = new TargetQueue();
+        assertTrue(test.isEmpty());
+
+        test.addTargets("(7,5)");
+        assertFalse(test.isEmpty());
+
+        Position pos = new Position(7, 5);
+        assertEquals(pos, test.dequeue());
+    }
+
+    @Test
+    @Tag("score:2")
+    @DisplayName("TargetQueue addTargets() test2")
+    void tqAddTargets2() {
+        TargetQueue test = new TargetQueue();
+
+        test.addTargets("(7,5).(0,5).(2,3)");
+
+        Position pos = new Position(7, 5);
+        Position pos2 = new Position(0, 5);
+        Position pos3 = new Position(2, 3);
+
+        assertFalse(test.isEmpty());
+
+        assertEquals(pos, test.dequeue());
+        assertEquals(pos2, test.dequeue());
+        assertEquals(pos3, test.dequeue());
+
+    }
+
+    @Test
+    @Tag("score:1")
+    @DisplayName("TargetQueue addTargets() test3")
+    void tqAddTargets3() {
+        TargetQueue test = new TargetQueue();
+
+        assertThrows(IllegalArgumentException.class,
+                () -> test.addTargets("(7,5)(0,5)"));
+    }
+
+    @Test
+    @Tag("score:1")
+    @DisplayName("TargetQueue addTargets() test4")
+    void tqAddTargets4() {
+        TargetQueue test = new TargetQueue();
+
+        assertThrows(IllegalArgumentException.class,
+                () -> test.addTargets("(7,1).(0,)"));
+    }
+
+    @Test
+    @Tag("score:5")
+    @DisplayName("TargetQueue addTargets() GitHub Test 1 - Killua")
+    void tqAddTargets5() {
+        TargetQueue test = new TargetQueue();
+
+        test.addTargets("(1,2).(3,4).(5,6).");
+
+        Position pos = new Position(1, 2);
+        Position pos2 = new Position(3, 4);
+        Position pos3 = new Position(5, 6);
+
+        assertFalse(test.isEmpty());
+
+        assertEquals(pos, test.dequeue());
+        assertEquals(pos2, test.dequeue());
+        assertEquals(pos3, test.dequeue());
+
+        // Should not have any error even with "." at the end
+        // https://edstem.org/us/courses/32649/discussion/2716504
+
+    }
+
+    @Test
+    @Tag("score:5")
+    @DisplayName("TargetQueue addTargets() GitHub Test 2 - Killua")
+    void tqAddTargets6() {
+        TargetQueue test = new TargetQueue();
+
+        test.addTargets(".");
+
+        assertTrue(test.isEmpty());
+
+        // Should not have any error even with just "." as the queue should just be empty
+        // https://edstem.org/us/courses/32649/discussion/2716504
+    }
+
+    @Test
+    @Tag("score:5")
+    @DisplayName("TargetQueue addTargets() GitHub Test 3 - Killua")
+    void tqAddTargets7() {
+        TargetQueue test = new TargetQueue();
+
+        test.addTargets(".(1,2).(3,4)");
+
+        assertFalse(test.isEmpty());
+
+        Position pos = new Position(1, 2);
+        Position pos2 = new Position(3, 4);
+
+        assertEquals(pos, test.dequeue());
+        assertEquals(pos2, test.dequeue());
+
+        // Should not have any error even with "." in front
+        // https://edstem.org/us/courses/32649/discussion/2716504
+    }
+
+    @Test
+    @Tag("score:5")
+    @DisplayName("TargetQueue addTargets() GitHub Test 4 - Killua")
+    void tqAddTargets8() {
+        TargetQueue test = new TargetQueue();
+
+        assertThrows(IllegalArgumentException.class,
+                () -> test.addTargets("(1,2)..(3,4)"));
+
+        // Should throw error since there is more than one period between each position
+        // https://edstem.org/us/courses/32649/discussion/2716504
+    }
+
+    @Test
+    @Tag("score:5")
+    @DisplayName("TargetQueue addTargets() GitHub Test 5 - Killua")
+    void tqAddTargets9() {
+        TargetQueue test = new TargetQueue();
+
+        assertThrows(IllegalArgumentException.class,
+                () -> test.addTargets("(1, 2).(3,4)"));
+
+        // Should throw error when there is a space between characters
+        // https://edstem.org/us/courses/32649/discussion/2754324
+    }
+
+    @Test
+    @Tag("score:1")
+    @DisplayName("TargetQueue clear() test")
+    void tqClear() {
+        TargetQueue test = new TargetQueue();
+
+        test.addTargets("(7,5)");
+        assertFalse(test.isEmpty());
+
+        test.clear();
+        assertTrue(test.isEmpty());
+    }
+
+    @Test
+    void tqAddTargets_1() {
+        TargetQueue test = new TargetQueue();
+        test.addTargets(".");
+        assertTrue(test.isEmpty());
+    }
+
+    // front and back period
+    @Test
+    void tqAddTargets_2() {
+        TargetQueue test = new TargetQueue();
+        test.addTargets(".(0,0).");
+        assertEquals(test.dequeue(), new Position(0, 0));
+        assertTrue(test.isEmpty());
+    }
+
+    @Test
+    void tqAddTargets_3() {
+        TargetQueue test = new TargetQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.addTargets("..(0,0)."));
+    }
+
+    // Nothing as input
+    @Test
+    void tqAddTargets_4() {
+        TargetQueue test = new TargetQueue();
+        test.addTargets("");
+        assertTrue(test.isEmpty());
+    }
+
+    // Just a space as input
+    @Test
+    void tqAddTargets_5() {
+        TargetQueue test = new TargetQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.addTargets(" "));
+    }
+
+    // Null input
+    @Test
+    void tqAddTargets_6() {
+        TargetQueue test = new TargetQueue();
+        assertThrows(NullPointerException.class,
+                () -> test.addTargets(null));
+    }
+
+    // Letter in coordinate
+    @Test
+    void tqAddTargets_7() {
+        TargetQueue test = new TargetQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.addTargets("(0,0).(1,1).(0,a)"));
+    }
+
+    // Multi Digit Position Input
+    @Test
+    void tqAddTargets_8() {
+        TargetQueue test = new TargetQueue();
+        test.addTargets("(0,0).(100,9000)");
+        assertEquals(test.dequeue(), new Position(0, 0));
+        assertEquals(test.dequeue(), new Position(100, 9000));
+        assertTrue(test.isEmpty());
+    }
+
+    // Mad periods
+    @Test
+    void tqAddTargets_9() {
+        TargetQueue test = new TargetQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.addTargets("....."));
+    }
+
+    // straight up no periods
+    @Test
+    void tqAddTargets_10() {
+        TargetQueue test = new TargetQueue();
+        test.addTargets("(0,0)");
+        assertEquals(test.dequeue(), new Position(0, 0));
+        assertTrue(test.isEmpty());
+    }
+
+    // missing second half
+    @Test
+    void tqAddTargets_11() {
+        TargetQueue test = new TargetQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.addTargets("(1,"));
+    }
+
+    // missing second parenthesis
+    @Test
+    void tqAddTargets_12() {
+        TargetQueue test = new TargetQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.addTargets("(1,2"));
+    }
+
+    // just one number
+    @Test
+    void tqAddTargets_13() {
+        TargetQueue test = new TargetQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.addTargets("(12)"));
+    }
+
+    // wierd minus sign placement
+    @Test
+    void tqAddTargets_15() {
+        TargetQueue test = new TargetQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.addTargets("(12,1-3)"));
+    }
+
+    // wierd minus sign placement pt2
+    @Test
+    void tqAddTargets_16() {
+        TargetQueue test = new TargetQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.addTargets("(12,13-)"));
+    }
+
+    // float coordinates
+    @Test
+    void tqAddTargets_17() {
+        TargetQueue test = new TargetQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.addTargets("(12,1.3)"));
+    }
+
+    // empty but properly formatted I suppose?
+    @Test
+    void tqAddTargets_18() {
+        TargetQueue test = new TargetQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.addTargets("(,)"));
+    }
+
+    // properly formatted but spaces in between (in coordinate)
+    @Test
+    void tqAddTargets_19() {
+        TargetQueue test = new TargetQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.addTargets("(1, 3)"));
+    }
+
+    // properly formatted but spaces in between (between coordinates)
+    @Test
+    void tqAddTargets_20() {
+        TargetQueue test = new TargetQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.addTargets("(1,3). (1,3)"));
+    }
+
+    // properly formatted with leading 0
+    @Test
+    void tqAddTargets_21() {
+        TargetQueue test = new TargetQueue();
+        test.addTargets("(03,05)");
+        assertEquals(test.dequeue(), new Position(3, 5));
+        assertTrue(test.isEmpty());
+    }
+
+    // multiple .
+    void tqAddTargets_22() {
+        TargetQueue test = new TargetQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.addTargets("(12,2)..(2,212133)."));
+    }
+
+    // extra (
+    void tqAddTargets_23() {
+        TargetQueue test = new TargetQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.addTargets("((12,2).(2,212133)"));
+    }
+
+    // extra )
+    void tqAddTargets_24() {
+        TargetQueue test = new TargetQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.addTargets("(12,2)).(2,212133)"));
+    }
+
+    // extra ()
+    void tqAddTargets_25() {
+        TargetQueue test = new TargetQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.addTargets("((12,2)).(2,212133)"));
+    }
+
+    // extra ) at the end
+    void tqAddTargets_26() {
+        TargetQueue test = new TargetQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.addTargets("(12,2).((2,212133))"));
+    }
+
+    //extra () wrapping string
+    void tqAddTargets_27() {
+        TargetQueue test = new TargetQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.addTargets("((12,2).(2,212133))"));
+    }
+
+    // Testing clear function
+    @Test
+    void tqClear_1() {
+        TargetQueue test1 = new TargetQueue();
+        TargetQueue test2 = new TargetQueue();
+        test1.addTargets("(0,0).(1,1).(0,3)");
+        test1.clear();
+        assertTrue(test1.isEmpty());
+        assertEquals(test1, test2);
+    }
+}
