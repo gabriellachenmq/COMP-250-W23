@@ -18,7 +18,27 @@ public class TargetQueue extends MyQueue<Position>{
         clear();
         String num = "";
         boolean periodFound = false;
+        boolean hasConsecutiveP = false;
+        int count = 0;
+        if (input.length() != 0) {
+            char prevChar = input.charAt(0);
+            char targetChar = '(';
+            for (int i = 1; i < input.length(); i++) {
+                char currChar = input.charAt(i);
+                if (currChar == targetChar) {
+                    count++;
+                }
+                if (currChar == prevChar) {
+                    hasConsecutiveP = true;
+                    break;
+                }
+                prevChar = currChar;
+            }
 
+            if (hasConsecutiveP && prevChar == '.') {
+                throw new IllegalArgumentException("Invalid syntax");
+            }
+        }
         //TargetQueue queue = (TargetQueue) new TargetQueue();
         for (char c : input.toCharArray()) {
             if (!Character.isDigit(c) && c != '(' && c != ')' && c != ',' && c != '.') {
@@ -71,15 +91,13 @@ public class TargetQueue extends MyQueue<Position>{
                 throw new IllegalArgumentException("Invalid syntax");
             }
         }
-
         if (!periodFound){
-
-            if (!stack.isEmpty() || !num.isEmpty()) {
+            if (!stack.isEmpty() || !num.isEmpty() || count >= 1) {
                 throw new IllegalArgumentException("Invalid input syntax");
             }
         }
-    }
 
+    }
     private boolean isValidInteger(String s) {
         try {
             Integer.parseInt(s);
@@ -90,3 +108,4 @@ public class TargetQueue extends MyQueue<Position>{
     }
 
 }
+
