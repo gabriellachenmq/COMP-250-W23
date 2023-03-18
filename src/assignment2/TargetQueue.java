@@ -1,5 +1,6 @@
 package assignment2;
 
+
 public class TargetQueue extends MyQueue<Position>{
     private MyStack<String> stack;
 
@@ -17,8 +18,13 @@ public class TargetQueue extends MyQueue<Position>{
         clear();
         String num = "";
         boolean periodFound = false;
+
         //TargetQueue queue = (TargetQueue) new TargetQueue();
         for (char c : input.toCharArray()) {
+            if (!Character.isDigit(c) && c != '(' && c != ')' && c != ',' && c != '.') {
+                throw new IllegalArgumentException("Invalid character: " + c);
+            }
+
             if (c == '(') {
                 if (!stack.isEmpty() || !num.isEmpty()) {
                     throw new IllegalArgumentException("Invalid syntax");
@@ -34,7 +40,7 @@ public class TargetQueue extends MyQueue<Position>{
                 stack.push(",");
                 num = "";
             } else if (c == ')') {
-                if (stack.isEmpty() || num.isEmpty()) {
+                if (stack.isEmpty() || num.isEmpty() || stack.getSize() != 3) {
                     throw new IllegalArgumentException("Invalid input syntax");
                 }
                 String yCoord = num;
@@ -84,5 +90,3 @@ public class TargetQueue extends MyQueue<Position>{
     }
 
 }
-
-
