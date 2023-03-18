@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="part 1 queue">
+    <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="part 2 position">
+      <change afterPath="$PROJECT_DIR$/src/assignment2/TargetQueue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment2/Minitester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/Minitester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment2/MyDoublyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/MyDoublyLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment2/MyQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/MyQueue.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +177,7 @@
       <workItem from="1676358507353" duration="46000" />
       <workItem from="1676401320107" duration="1124000" />
       <workItem from="1678856010440" duration="12813000" />
-      <workItem from="1678940808043" duration="892000" />
+      <workItem from="1678940808043" duration="4952000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1673040166236</created>
@@ -286,7 +284,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678939857430</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="part 1 almost final queue">
+      <created>1678941807871</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1678941807872</updated>
+    </task>
+    <task id="LOCAL-00017" summary="part 2 position">
+      <created>1679104971228</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1679104971228</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,6 +319,8 @@
     <MESSAGE value="part 1" />
     <MESSAGE value="part 1 stack" />
     <MESSAGE value="part 1 queue" />
-    <option name="LAST_COMMIT_MESSAGE" value="part 1 queue" />
+    <MESSAGE value="part 1 almost final queue" />
+    <MESSAGE value="part 2 position" />
+    <option name="LAST_COMMIT_MESSAGE" value="part 2 position" />
   </component>
 </project>
