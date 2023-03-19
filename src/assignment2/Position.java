@@ -43,6 +43,7 @@ public class Position {
     }
 
     public void moveWest(){
+
         this.xCor--;
     }
 
@@ -52,6 +53,7 @@ public class Position {
     }
 
     public void moveNorth(){
+
         this.yCor--;
     }
 

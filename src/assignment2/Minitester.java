@@ -1141,3 +1141,109 @@ class Part2Test {
     }
 }
 
+class Part3Test {
+
+    // ==================== REGION CLASS TEST =================== //
+    @Test
+    @Tag("score:1")
+    @DisplayName("Region contains() test1")
+    void regionContainsTest1() {
+        Region region = new Region(0, 0, 5, 5);
+        Position goodPos = new Position(2, 4);
+        assertTrue(region.contains(goodPos));
+    }
+
+    // Strictly Positive Region
+    @Test
+    void regionContains_1() {
+        Region r = new Region(1, 1, 11, 11);
+
+        // Contains in bounds of x and y
+        assertTrue(r.contains(new Position(5, 7)));
+
+        // Contains in bounds of x (y is over)
+        assertFalse(r.contains(new Position(6, 16)));
+
+        // Contains in bounds of y (x is over)
+        assertFalse(r.contains(new Position(12, 7)));
+
+        // Contains in bounds of x (y is under)
+        assertFalse(r.contains(new Position(5, 0)));
+
+        // Contains in bounds of y (x is under)
+        assertFalse(r.contains(new Position(-14, 7)));
+
+        // Contains x and y out of bounds (over)
+        assertFalse(r.contains(new Position(14, 27)));
+
+        // Contains x and y out of bounds (under)
+        assertFalse(r.contains(new Position(-14, -7)));
+    }
+
+    // Inclusive Test
+    @Test
+    void regionContains_2() {
+        Region r = new Region(1, 1, 11, 11);
+
+        // on x (min)
+        assertTrue(r.contains(new Position(1, 5)));
+        // on y (min)
+        assertTrue(r.contains(new Position(5, 1)));
+        // on x and y (min)
+        assertTrue(r.contains(new Position(1, 1)));
+
+        // on x (max)
+        assertTrue(r.contains(new Position(11, 7)));
+        // on y (max)
+        assertTrue(r.contains(new Position(5, 11)));
+        // on x and y (max)
+        assertTrue(r.contains(new Position(11, 11)));
+    }
+
+    // ==================== CATERPILLAR CLASS TEST =================== //
+    @Test
+    @Tag("score:1")
+    @DisplayName("Caterpillar constructor test1")
+    void caterpillarConstructorTest1() {
+        Caterpillar caterpillar = new Caterpillar();
+        Position startPos = new Position(7, 7);
+        assertEquals(caterpillar.peekFirst(), startPos);
+        assertEquals(1, caterpillar.getSize());
+        assertEquals(startPos, caterpillar.getHead());
+    }
+
+    @Test
+    @Tag("score:1")
+    @DisplayName("Caterpillar eat() test1")
+    void caterpillarEatTest1() {
+        Caterpillar caterpillar = new Caterpillar();
+        Position adjPos = new Position(8, 7);
+
+        caterpillar.eat(adjPos);
+
+        assertEquals(adjPos, caterpillar.peekFirst());
+        assertEquals(2, caterpillar.getSize());
+    }
+
+    @Test
+    @Tag("score:1")
+    @DisplayName("Caterpillar move() test1")
+    void caterpillarMoveTest1() {
+        Caterpillar caterpillar = new Caterpillar();
+        Position adjPos = new Position(8, 7);
+
+        caterpillar.move(adjPos);
+
+        assertEquals(adjPos, caterpillar.peekFirst());
+        assertEquals(1, caterpillar.getSize());
+    }
+
+    @Test
+    @Tag("score:1")
+    @DisplayName("Caterpillar selfCollision() test1")
+    void caterpillarSelfCollision1() {
+        Caterpillar caterpillar = new Caterpillar();
+        assertFalse(caterpillar.selfCollision(new Position(7, 9)));
+    }
+}
+
