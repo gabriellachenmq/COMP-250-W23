@@ -889,6 +889,7 @@ class Part2Test {
             assertEquals(Direction.SOUTH, test.dequeue());
             assertEquals(Direction.WEST, test.dequeue());
         }
+        //assertTrue(test.isEmpty());
     }
 
     @Test
