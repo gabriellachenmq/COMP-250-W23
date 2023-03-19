@@ -38,6 +38,7 @@ public class Position {
     }
 
     public int getY(){
+
         return this.yCor;
     }
 
@@ -46,6 +47,7 @@ public class Position {
     }
 
     public void moveEast(){
+
         this.xCor++;
     }
 
@@ -54,6 +56,7 @@ public class Position {
     }
 
     public void moveSouth(){
+
         this.yCor++;
     }
 
