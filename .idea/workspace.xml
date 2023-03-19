@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="part 2 addTargets">
+    <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="part 2 DIRECTION">
+      <change afterPath="$PROJECT_DIR$/src/assignment2/ActionQueue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment2/TargetQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/TargetQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment2/Minitester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/Minitester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -84,7 +86,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Part2Test.tqAddTargets3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Part2Test.aqLoadFromEncodedString1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
         <pattern>
@@ -94,13 +96,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="assignment2" />
       <option name="MAIN_CLASS_NAME" value="assignment2.Part2Test" />
-      <option name="METHOD_NAME" value="tqAddTargets3" />
+      <option name="METHOD_NAME" value="aqLoadFromEncodedString1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Part2Test.tqAddTargets_13" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Part2Test.aqLoadFromEncodedString2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
         <pattern>
@@ -110,13 +112,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="assignment2" />
       <option name="MAIN_CLASS_NAME" value="assignment2.Part2Test" />
-      <option name="METHOD_NAME" value="tqAddTargets_13" />
+      <option name="METHOD_NAME" value="aqLoadFromEncodedString2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Part2Test.tqAddTargets_4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Part2Test.aqLoadFromEncodedString_2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
         <pattern>
@@ -126,13 +128,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="assignment2" />
       <option name="MAIN_CLASS_NAME" value="assignment2.Part2Test" />
-      <option name="METHOD_NAME" value="tqAddTargets_4" />
+      <option name="METHOD_NAME" value="aqLoadFromEncodedString_2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Part2Test.tqAddTargets_9" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Part2Test.aqLoadFromEncodedString_8" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
         <pattern>
@@ -142,7 +144,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="assignment2" />
       <option name="MAIN_CLASS_NAME" value="assignment2.Part2Test" />
-      <option name="METHOD_NAME" value="tqAddTargets_9" />
+      <option name="METHOD_NAME" value="aqLoadFromEncodedString_8" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -151,10 +153,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.Part2Test" />
-        <item itemvalue="JUnit.Part2Test.tqAddTargets3" />
-        <item itemvalue="JUnit.Part2Test.tqAddTargets_4" />
-        <item itemvalue="JUnit.Part2Test.tqAddTargets_9" />
-        <item itemvalue="JUnit.Part2Test.tqAddTargets_13" />
+        <item itemvalue="JUnit.Part2Test.aqLoadFromEncodedString1" />
+        <item itemvalue="JUnit.Part2Test.aqLoadFromEncodedString_2" />
+        <item itemvalue="JUnit.Part2Test.aqLoadFromEncodedString_8" />
+        <item itemvalue="JUnit.Part2Test.aqLoadFromEncodedString2" />
       </list>
     </recent_temporary>
   </component>
@@ -177,7 +179,7 @@
       <workItem from="1676358507353" duration="46000" />
       <workItem from="1676401320107" duration="1124000" />
       <workItem from="1678856010440" duration="12813000" />
-      <workItem from="1678940808043" duration="13597000" />
+      <workItem from="1678940808043" duration="18024000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1673040166236</created>
@@ -319,7 +321,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679126006622</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="part 2 addTargets finished">
+      <created>1679128321268</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1679128321268</updated>
+    </task>
+    <task id="LOCAL-00022" summary="part 2 DIRECTION">
+      <created>1679186434282</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1679186434285</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,6 +359,8 @@
     <MESSAGE value="part 1 almost final queue" />
     <MESSAGE value="part 2 position" />
     <MESSAGE value="part 2 addTargets" />
-    <option name="LAST_COMMIT_MESSAGE" value="part 2 addTargets" />
+    <MESSAGE value="part 2 addTargets finished" />
+    <MESSAGE value="part 2 DIRECTION" />
+    <option name="LAST_COMMIT_MESSAGE" value="part 2 DIRECTION" />
   </component>
 </project>

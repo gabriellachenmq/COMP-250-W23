@@ -846,4 +846,297 @@ class Part2Test {
         assertTrue(test1.isEmpty());
         assertEquals(test1, test2);
     }
+    @Test
+    @Tag("score:1")
+    @DisplayName("ActionQueue loadFromEncodedString() test1")
+    void  aqLoadFromEncodedString1() {
+        ActionQueue test = new ActionQueue();
+
+        test.loadFromEncodedString("3[E]"); // {East, East, East}
+        for (int i = 0; i < 3; i++) {
+            assertEquals(Direction.EAST, test.dequeue());
+        }
+    }
+
+    @Test
+    @Tag("score:1")
+    @DisplayName("ActionQueue loadFromEncodedString() test2")
+    void  aqLoadFromEncodedString2() {
+        ActionQueue test = new ActionQueue();
+
+        test.loadFromEncodedString("3[N]2[S]1[W]"); // { North, North, North, South, South, West }
+        for (int i = 0; i < 6; i++) {
+            if (i < 3){
+                assertEquals(Direction.NORTH, test.dequeue());
+            } else if (i < 5) {
+                assertEquals(Direction.SOUTH, test.dequeue());
+            } else {
+                assertEquals(Direction.WEST, test.dequeue());
+            }
+        }
+    }
+
+    @Test
+    @Tag("score:1")
+    @DisplayName("ActionQueue loadFromEncodedString() test3")
+    void  aqLoadFromEncodedString3() {
+        ActionQueue test = new ActionQueue();
+
+        test.loadFromEncodedString("3[SW]");
+        // {South, West, South, West, South, West}
+
+        for (int i = 0; i < 3; i++) {
+            assertEquals(Direction.SOUTH, test.dequeue());
+            assertEquals(Direction.WEST, test.dequeue());
+        }
+    }
+
+    @Test
+    @Tag("score:1")
+    @DisplayName("ActionQueue loadFromEncodedString() test4")
+    void  aqLoadFromEncodedString4() {
+        ActionQueue test = new ActionQueue();
+
+        assertThrows(IllegalArgumentException.class,
+                () -> test.loadFromEncodedString("2S[W]"));
+    }
+
+    @Test
+    @Tag("score:1")
+    @DisplayName("ActionQueue clear() test")
+    void  aqClear() {
+        ActionQueue test = new ActionQueue();
+
+        test.loadFromEncodedString("3[E]");
+        assertFalse(test.isEmpty());
+
+        test.clear();
+        assertTrue(test.isEmpty());
+    }
+
+    // Case #1 on A2 Doc
+    @Test
+    void aqLoadFromEncodedString_1(){
+        ActionQueue test = new ActionQueue();
+        test.loadFromEncodedString("3[N]"); // NNN
+
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+
+        assertTrue(test.isEmpty());
+    }
+
+    // Case #2 on A2 Doc
+    @Test
+    void aqLoadFromEncodedString_2(){
+        ActionQueue test = new ActionQueue();
+        test.loadFromEncodedString("3[NE]"); // NENENE
+
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+
+        assertTrue(test.isEmpty());
+    }
+
+    // Case #3 on A2 Doc
+    @Test
+    void aqLoadFromEncodedString_3(){
+        ActionQueue test = new ActionQueue();
+        test.loadFromEncodedString("3[2[N]2[E]]1[S]"); // NNEENNEENNEES
+
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.SOUTH, test.dequeue());
+
+        assertTrue(test.isEmpty());
+    }
+
+    // Case #4 on A2 Doc
+    @Test
+    void aqLoadFromEncodedString_4(){
+        ActionQueue test = new ActionQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.loadFromEncodedString("2E[N]"));
+    }
+
+    // Case #5 on A2 Doc
+    @Test
+    void aqLoadFromEncodedString_5(){
+        ActionQueue test = new ActionQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.loadFromEncodedString("EN]"));
+    }
+
+    // Case #6 on A2 Doc
+    @Test
+    void aqLoadFromEncodedString_6(){
+        ActionQueue test = new ActionQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.loadFromEncodedString("E[EN]"));
+    }
+
+    // Case #7 on A2 Doc
+    @Test
+    void aqLoadFromEncodedString_7(){
+        ActionQueue test = new ActionQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.loadFromEncodedString("A"));
+    }
+
+    // No Brackets
+    @Test
+    void aqLoadFromEncodedString_8(){
+        ActionQueue test = new ActionQueue();
+        test.loadFromEncodedString("EN"); // NNN
+
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+
+        assertTrue(test.isEmpty());
+    }
+
+    // Wierd Space
+    @Test
+    void aqLoadFromEncodedString_9(){
+        ActionQueue test = new ActionQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.loadFromEncodedString("[ N]"));
+    }
+
+    // k = 0
+    @Test
+    void aqLoadFromEncodedString_10(){
+        ActionQueue test = new ActionQueue();
+        test.loadFromEncodedString("0[ESSN]");
+
+        assertTrue(test.isEmpty());
+    }
+
+    // Empty Brackets
+    @Test
+    void aqLoadFromEncodedString_11(){
+        ActionQueue test = new ActionQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.loadFromEncodedString("3[]"));
+    }
+
+    // Ed post 'using first inductive clause'
+    @Test
+    void aqLoadFromEncodedString_12(){
+        ActionQueue test = new ActionQueue();
+        test.loadFromEncodedString("NE5[N]"); // NENNNNN
+
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+
+        assertTrue(test.isEmpty());
+    }
+
+    // Ed post 'using first second clause'
+    @Test
+    void aqLoadFromEncodedString_13(){
+        ActionQueue test = new ActionQueue();
+        test.loadFromEncodedString("2[NE5[N]]"); // NENNNNNNENNNNN
+
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+
+        assertTrue(test.isEmpty());
+    }
+
+    // Doubly nested
+    @Test
+    void aqLoadFromEncodedString_14(){
+        ActionQueue test = new ActionQueue();
+        test.loadFromEncodedString("2[3[2[N]2[E]]2[W]]"); // NNEENNEENNEEWWNNEENNEENNEEWW
+
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.WEST, test.dequeue());
+        assertEquals(Direction.WEST, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.WEST, test.dequeue());
+        assertEquals(Direction.WEST, test.dequeue());
+
+        assertTrue(test.isEmpty());
+    }
+
+    // Double bracket
+    @Test
+    void aqLoadFromEncodedString_15(){
+        ActionQueue test = new ActionQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.loadFromEncodedString("3[[N]]"));
+    }
+
+    // Check negative K with action Queue
+    @Test
+    void aqLoadFromEncodedString_16(){
+        ActionQueue test = new ActionQueue();
+        assertThrows(IllegalArgumentException.class,
+                () -> test.loadFromEncodedString("-3[N]"));
+    }
+
+    // Test clear
+    @Test
+    void aqClear_1(){
+        ActionQueue test = new ActionQueue();
+        test.loadFromEncodedString("EEEEENNNNNSSS");
+        test.clear();
+        assertTrue(test.isEmpty());
+    }
 }
+
