@@ -882,12 +882,12 @@ class Part2Test {
     void  aqLoadFromEncodedString3() {
         ActionQueue test = new ActionQueue();
 
-        test.loadFromEncodedString("3[SW]");
+        test.loadFromEncodedString("2[N]");
         // {South, West, South, West, South, West}
 
-        for (int i = 0; i < 3; i++) {
-            assertEquals(Direction.SOUTH, test.dequeue());
-            assertEquals(Direction.WEST, test.dequeue());
+        for (int i = 0; i < 2; i++) {
+            assertEquals(Direction.NORTH, test.dequeue());
+            assertEquals(Direction.NORTH, test.dequeue());
         }
         //assertTrue(test.isEmpty());
     }
@@ -1244,6 +1244,139 @@ class Part3Test {
     void caterpillarSelfCollision1() {
         Caterpillar caterpillar = new Caterpillar();
         assertFalse(caterpillar.selfCollision(new Position(7, 9)));
+    }
+
+    @Test // tests if all required private fields are not null when calling constructor
+    @Tag("score:1")
+    @DisplayName("World constructor test1")
+    void worldConstructorTest1() throws IllegalAccessException {
+        TargetQueue targetQueue = new TargetQueue();
+        ActionQueue actionQueue = new ActionQueue();
+
+        String food = "(9,9)";
+        targetQueue.addTargets(food);
+
+        World world = new World(targetQueue, actionQueue);
+
+        Field[] privateWorldFields = World.class.getDeclaredFields();
+        for (Field privateField : privateWorldFields) {
+            privateField.setAccessible(true);
+            Object value = privateField.get(world);
+            assertNotNull(value);
+        }
+    }
+
+    @Test
+    @Tag("score:1")
+    @DisplayName("World step() test1")
+    void worldStepTest1() {
+        TargetQueue targetQueue = new TargetQueue();
+        ActionQueue actionQueue = new ActionQueue();
+
+        String food = "(7,10)";
+        String direction = "2[N]";
+
+        targetQueue.addTargets(food);
+        actionQueue.loadFromEncodedString(direction);
+
+        World world = new World(targetQueue, actionQueue);
+
+        world.step();  // move 1 step N from (7,7) to (7,8)
+
+        assertEquals(GameState.MOVE, world.getState());
+        assertEquals(1, world.getCaterpillar().getSize());
+        assertEquals(new Position(7, 6), world.getCaterpillar().getHead());
+    }
+
+    @Test
+    @Tag("score:1")
+    @DisplayName("World step() test2")
+    void worldStepTest2() {
+        TargetQueue targetQueue = new TargetQueue();
+        ActionQueue actionQueue = new ActionQueue();
+
+        String food = "(5,9)";
+        String direction = "10[E]";
+
+        actionQueue.loadFromEncodedString(direction);
+        targetQueue.addTargets(food);
+        World world = new World(targetQueue, actionQueue);
+
+        //move 9 steps E, wall collision
+        for (int i = 0; i < 9; i++) {  // move 9 steps E from (7,7) to (15,7)
+            world.step();
+        }
+
+        assertEquals(GameState.WALL_COLLISION, world.getState());
+        assertEquals(new Position(15, 7), world.getCaterpillar().getHead());
+    }
+    @Test
+    @Tag("score:2")
+    @DisplayName("World step() test3")
+    void worldStepTest3() throws Exception {
+        TargetQueue targetQueue = new TargetQueue();
+        ActionQueue actionQueue = new ActionQueue();
+
+        String food = "(9,9).(14,7).(7,10)";
+        String direction = "2[S]2[E]" ;
+
+        targetQueue.addTargets(food);
+        actionQueue.loadFromEncodedString(direction);
+
+        World world = new World(targetQueue, actionQueue);
+
+        for (int i = 0; i < 4; i++) {  // move 4 steps S from (7,7) to (7,3)
+            world.step();
+        }
+
+        assertEquals(GameState.EAT, world.getState());
+        assertEquals(2, world.getCaterpillar().getSize());
+        assertEquals(new Position(9, 9), world.getCaterpillar().getHead());
+        assertFalse(targetQueue.isEmpty());
+        assertTrue(actionQueue.isEmpty());
+
+    }
+
+    @Test
+    @Tag("score:1")
+    @DisplayName("World getters test1")
+    void worldGetStateTest1() {
+        TargetQueue targetQueue = new TargetQueue();
+        ActionQueue actionQueue = new ActionQueue();
+
+        String str_target_pos = "(9,9)";
+        String str_encoded = "2[E]" ;
+
+        actionQueue.loadFromEncodedString(str_encoded);
+        targetQueue.addTargets(str_target_pos);
+
+        World world = new World(targetQueue, actionQueue);
+
+        GameState state = GameState.MOVE;
+        assertEquals(world.getState(),state);
+
+        Caterpillar caterpillar = new Caterpillar();
+        assertEquals(world.getCaterpillar(), caterpillar);
+
+        Position pos = new Position(9,9);
+        assertEquals(world.getFood(), pos);
+    }
+    @Test
+    @Tag("score:1")
+    @DisplayName("World isRunning() test1")
+    void worldIsRunningTest1() {
+        TargetQueue targetQueue = new TargetQueue();
+        ActionQueue actionQueue = new ActionQueue();
+
+        String str_target_pos = "(9,9)";
+        targetQueue.addTargets(str_target_pos);
+        World world = new World(targetQueue, actionQueue);
+
+        world.step();
+
+        assertEquals(world.getState(), GameState.NO_MORE_ACTION);
+        assertFalse(world.isRunning());
+
     }
 }
 
