@@ -932,8 +932,22 @@ class Part2Test {
     @Test
     void aqLoadFromEncodedString_2(){
         ActionQueue test = new ActionQueue();
-        test.loadFromEncodedString("3[NE]"); // NENENE
+        test.loadFromEncodedString("10[NE]"); // NENENE
 
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
+        assertEquals(Direction.NORTH, test.dequeue());
+        assertEquals(Direction.EAST, test.dequeue());
         assertEquals(Direction.NORTH, test.dequeue());
         assertEquals(Direction.EAST, test.dequeue());
         assertEquals(Direction.NORTH, test.dequeue());

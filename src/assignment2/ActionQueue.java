@@ -56,6 +56,11 @@ public class ActionQueue extends MyQueue<Direction> {
                 int iRight = input.indexOf(']');
                 int a = 0;
                 int digit = Character.getNumericValue(input.charAt(iLeft-1));
+                if(iLeft >=2) {
+                    if (Character.isDigit(input.charAt(iLeft - 2))) {
+                        digit = Character.getNumericValue(input.charAt(iLeft - 2)) * 10 + Character.getNumericValue(input.charAt(iLeft - 1));
+                    }
+                }
                 if(!Character.isDigit(input.charAt(iLeft-1))){ //check if there is a int right in front of the []
                     throw new IllegalArgumentException("Invalid syntax");
                 }
@@ -86,9 +91,7 @@ public class ActionQueue extends MyQueue<Direction> {
                 normalStr = "";
             }
 
-            if (count1 % 2 == 0 && count2 % 2 == 0){
 
-            }
 
         }
 

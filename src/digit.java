@@ -1,3 +1,5 @@
+
+
 public class digit {
     public static void main(String[] args)
     {
@@ -9,4 +11,6 @@ public class digit {
             }
         }
     }
+
+
 
