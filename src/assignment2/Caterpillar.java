@@ -27,6 +27,7 @@ public class Caterpillar extends MyDoublyLinkedList<Position>{
             throw new IllegalArgumentException("The input position is not adjacent to the current head position.");
         }
         this.addFirst(pos);
+
         this.removeLast();
     }
     public boolean selfCollision(Position pos) {

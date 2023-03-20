@@ -7,8 +7,9 @@
     <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="part 2 actionqueue">
       <change afterPath="$PROJECT_DIR$/src/CompressedStringDecoder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment2/ActionQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/ActionQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/isNested.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/isNested.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment2/Caterpillar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/Caterpillar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment2/Minitester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/Minitester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment2/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/World.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,30 +72,8 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.Part2Test">
-    <configuration name="isNested" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="isNested" />
-      <module name="COMP250" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Part1Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="COMP250" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignment2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="assignment2" />
-      <option name="MAIN_CLASS_NAME" value="assignment2.Part1Test" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Part2Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.Part3Test">
+    <configuration name="Part2Test.aqLoadFromEncodedString_2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
         <pattern>
@@ -104,12 +83,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="assignment2" />
       <option name="MAIN_CLASS_NAME" value="assignment2.Part2Test" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="aqLoadFromEncodedString_2" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Part2Test.aqLoadFromEncodedString2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Part3Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
         <pattern>
@@ -118,8 +98,23 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="assignment2" />
-      <option name="MAIN_CLASS_NAME" value="assignment2.Part2Test" />
-      <option name="METHOD_NAME" value="aqLoadFromEncodedString2" />
+      <option name="MAIN_CLASS_NAME" value="assignment2.Part3Test" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Part3Test.worldStepTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="COMP250" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment2" />
+      <option name="MAIN_CLASS_NAME" value="assignment2.Part3Test" />
+      <option name="METHOD_NAME" value="worldStepTest1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -141,13 +136,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Part3Test.worldStepTest3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="COMP250" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment2" />
+      <option name="MAIN_CLASS_NAME" value="assignment2.Part3Test" />
+      <option name="METHOD_NAME" value="worldStepTest3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Part2Test" />
-        <item itemvalue="JUnit.Part1Test" />
+        <item itemvalue="JUnit.Part3Test" />
         <item itemvalue="JUnit.Part3Test.worldStepTest2" />
-        <item itemvalue="Application.isNested" />
-        <item itemvalue="JUnit.Part2Test.aqLoadFromEncodedString2" />
+        <item itemvalue="JUnit.Part2Test.aqLoadFromEncodedString_2" />
+        <item itemvalue="JUnit.Part3Test.worldStepTest3" />
+        <item itemvalue="JUnit.Part3Test.worldStepTest1" />
       </list>
     </recent_temporary>
   </component>
@@ -170,7 +181,7 @@
       <workItem from="1676358507353" duration="46000" />
       <workItem from="1676401320107" duration="1124000" />
       <workItem from="1678856010440" duration="12813000" />
-      <workItem from="1678940808043" duration="70082000" />
+      <workItem from="1678940808043" duration="73414000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1673040166236</created>
@@ -396,7 +407,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679306104368</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="part 2 actionqueue">
+      <created>1679307803549</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1679307803549</updated>
+    </task>
+    <task id="LOCAL-00034" summary="part 2 actionqueue">
+      <created>1679307866526</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1679307866526</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -30,28 +30,28 @@ public class World {
         }
 
         Position currhead = cater.getHead();
+        Position nextHead = new Position(currhead);
         //Position nextHead = null;
-        if (actions.dequeue().equals('N')){
-            currhead.moveNorth();
+        if (heading.equals(Direction.NORTH)){
+            nextHead.moveNorth();
         }
-        if (actions.dequeue().equals('S')){
-            currhead.moveSouth();
+        if (heading.equals(Direction.SOUTH)){
+            nextHead.moveSouth();
         }
-        if (actions.dequeue().equals('W')){
-            currhead.moveWest();
+        if (heading.equals(Direction.WEST)){
+            nextHead.moveWest();
         }
-        if (actions.dequeue().equals('E')){
-            currhead.moveEast();
+        if (heading.equals(Direction.EAST)){
+            nextHead.moveEast();
         }
-        if (!region.contains(currhead)) {
+        if (!region.contains(nextHead)) {
             state = GameState.WALL_COLLISION;
             return;
         }
-        if (cater.selfCollision(currhead)) {
+        if (cater.selfCollision(nextHead)) {
             state = GameState.SELF_COLLISION;
-            return;
         }
-        if (currhead.equals(foodPos)) {
+        if (nextHead.equals(foodPos)) {
             cater.eat(foodPos);
             if (target.isEmpty()) {
                 state = GameState.DONE;
@@ -60,7 +60,7 @@ public class World {
                 state = GameState.EAT;
             }
         } else {
-            cater.move(foodPos);
+            cater.move(nextHead);
             state = GameState.MOVE;
         }
 
