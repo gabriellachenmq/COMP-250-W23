@@ -70,47 +70,26 @@ public class isNested {
             bcount = Character.getNumericValue(input.charAt(input.indexOf('[')-1));
             String rest1 = input.substring(input.indexOf('[')+1,k);
             String rest2 = null;
-            if(os.length() - (k+1) > 0){
-                rest2 = os.substring(k+1, os.length());
-                if(!isNested(rest1)){
-                    if(isNested(rest2)){
-                        decoded(rest2);
-                    }
-                    else {
-                        normal = decoded(rest1) + decoded(rest2);
-                    }
-                }
-                if(isNested(rest1)){
-                    decoded(rest1);
-                    if(!isNested(rest1)){
-                        normal = decoded(rest1);
-                    }
-                    else{
-                        decoded(rest1);
-                    }
+
+            if (!isNested(rest1)) {
+                normal = decoded(rest1);
+                for (int e = 0; e<bcount; e++){
+                    direction += normal;
                 }
             }
-            else {
+            if (isNested(rest1)) {
+                decoded(rest1);
                 if (!isNested(rest1)) {
                     normal = decoded(rest1);
                     for (int e = 0; e<bcount; e++){
                         direction += normal;
                     }
-                }
-                if (isNested(rest1)) {
+                } else {
                     decoded(rest1);
-                    if (!isNested(rest1)) {
-                        normal = decoded(rest1);
-                        for (int e = 0; e<bcount; e++){
-                            direction += normal;
-                        }
-                    } else {
-                        decoded(rest1);
-                    }
                 }
             }
-
         }
+
 
         if(bcount == 0){
             direction = normal;
@@ -121,7 +100,7 @@ public class isNested {
     }
 
     public static void main(String[] args){
-        String s1 = "3[N]2[S]1[W]";
+        String s1 = "4[3[N]2[S]1[W]]";
         String s2 = "2[3[2[N]2[E]]2[W]]";
 
         System.out.println(decoded(s1));
