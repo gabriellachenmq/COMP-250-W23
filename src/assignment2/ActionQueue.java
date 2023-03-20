@@ -115,7 +115,7 @@ public class ActionQueue extends MyQueue<Direction> {
                     directionStr = normalStr;
                 }
                 loadFromDirectionsString(directionStr);
-         }
+            }
         }
     }
 
