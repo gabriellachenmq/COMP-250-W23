@@ -49,13 +49,16 @@ public class ActionQueue extends MyQueue<Direction> {
                 int iLeft = input.indexOf('[');
                 int iRight = input.indexOf(']');
                 int a = 0;
-                int digit = input.charAt(iLeft-1);
-                if(!Character.isDigit(digit)){ //check if there is a int right in front of the []
+                int digit = Character.getNumericValue(input.charAt(iLeft-1));
+                if(!Character.isDigit(input.charAt(iLeft-1))){ //check if there is a int right in front of the []
+                    throw new IllegalArgumentException("Invalid syntax");
+                }
+                if ((iRight - iLeft) == 1){
                     throw new IllegalArgumentException("Invalid syntax");
                 }
 
                 if (input.indexOf(digit) > 0) {
-                    for (int e = 0; e < input.indexOf(digit); e++) {
+                    for (int e = 0; e < input.indexOf(input.charAt(iLeft-1)); e++) {
                         if (input.charAt(e) != 'N' && input.charAt(e) != 'E' && input.charAt(e) != 'S' && input.charAt(e) != 'W') {
                             throw new IllegalArgumentException("Invalid syntax");
                         }

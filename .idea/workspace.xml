@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="part 3 state">
+    <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="part 3 world">
       <change afterPath="$PROJECT_DIR$/src/CompressedStringDecoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assignment2/World.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment2/ActionQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/ActionQueue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assignment2/Minitester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/Minitester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +71,22 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.Part3Test.worldStepTest1">
+  <component name="RunManager" selected="JUnit.Part2Test.aqLoadFromEncodedString_11">
+    <configuration name="Part2Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="COMP250" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment2" />
+      <option name="MAIN_CLASS_NAME" value="assignment2.Part2Test" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Part2Test.aqLoadFromEncodedString3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
@@ -104,7 +119,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Part2Test.aqLoadFromEncodedString_2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Part2Test.aqLoadFromEncodedString_11" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
         <pattern>
@@ -114,13 +129,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="assignment2" />
       <option name="MAIN_CLASS_NAME" value="assignment2.Part2Test" />
-      <option name="METHOD_NAME" value="aqLoadFromEncodedString_2" />
+      <option name="METHOD_NAME" value="aqLoadFromEncodedString_11" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Part3Test.worldGetStateTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Part2Test.aqLoadFromEncodedString_12" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
         <pattern>
@@ -129,24 +144,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="assignment2" />
-      <option name="MAIN_CLASS_NAME" value="assignment2.Part3Test" />
-      <option name="METHOD_NAME" value="worldGetStateTest1" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Part3Test.worldStepTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="COMP250" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignment2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="assignment2" />
-      <option name="MAIN_CLASS_NAME" value="assignment2.Part3Test" />
-      <option name="METHOD_NAME" value="worldStepTest1" />
+      <option name="MAIN_CLASS_NAME" value="assignment2.Part2Test" />
+      <option name="METHOD_NAME" value="aqLoadFromEncodedString_12" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -154,10 +153,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Part3Test.worldStepTest1" />
-        <item itemvalue="JUnit.Part3Test.worldGetStateTest1" />
+        <item itemvalue="JUnit.Part2Test.aqLoadFromEncodedString_11" />
+        <item itemvalue="JUnit.Part2Test" />
+        <item itemvalue="JUnit.Part2Test.aqLoadFromEncodedString_12" />
         <item itemvalue="JUnit.Part2Test.aqLoadFromEncodedString3" />
-        <item itemvalue="JUnit.Part2Test.aqLoadFromEncodedString_2" />
         <item itemvalue="JUnit.Part2Test.aqLoadFromEncodedString_1" />
       </list>
     </recent_temporary>
@@ -181,7 +180,7 @@
       <workItem from="1676358507353" duration="46000" />
       <workItem from="1676401320107" duration="1124000" />
       <workItem from="1678856010440" duration="12813000" />
-      <workItem from="1678940808043" duration="37810000" />
+      <workItem from="1678940808043" duration="39106000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1673040166236</created>
@@ -372,7 +371,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679211592805</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="part 3 world">
+      <created>1679215927634</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1679215927634</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,7 +408,8 @@
     <MESSAGE value="part 3 region" />
     <MESSAGE value="part 3 Caterpillar" />
     <MESSAGE value="part 3 state" />
-    <option name="LAST_COMMIT_MESSAGE" value="part 3 state" />
+    <MESSAGE value="part 3 world" />
+    <option name="LAST_COMMIT_MESSAGE" value="part 3 world" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
