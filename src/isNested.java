@@ -6,17 +6,16 @@ import java.util.Stack;
 
 public class isNested {
     public static boolean isNested(String s) {
-        Stack<Character> stack = new Stack<>();
 
-        int iFirstL = 0;
-        int isFirstR = 0;
         char rb = ']';
         char lb = '[';
         int[] br = new int[2];
+        String origInput = s;
 
         br[0] = s.indexOf('[');
         br[1] = s.indexOf(']');
         String sliced = s.substring(br[0]+1, br[1]);
+        s = origInput;
         for (int i = 0; i<sliced.length(); i++){
             if(sliced.charAt(i) == rb || sliced.charAt(i) == lb){
                 return true;
@@ -26,7 +25,7 @@ public class isNested {
 
     }
 
-    public static String[] decoded(String input){
+    public static String decoded(String input){
         String normal = "";
         String direction = "";
         String nested = "";
@@ -51,62 +50,82 @@ public class isNested {
 
             nested = "";
         }
-        while(a) {
-            int lb = 0;
-            int rb = 0;
+
+        if(a){
+            Stack<Character> stack = new Stack<Character>();
             int k = 0;
-            MyStack<Character> stack = new MyStack<>();
             for (int i = 0; i < input.length(); i++) {
                 char c = input.charAt(i);
                 if (c == '[') {
                     stack.push(c);
                 } else if (c == ']') {
                     stack.pop();
-                    if(stack.isEmpty()) {
+                    if (stack.isEmpty()) {
                         k = i;
                         break;
                     }
                 }
             }
-
-
+            String os = input;
             bcount = Character.getNumericValue(input.charAt(input.indexOf('[')-1));
-            String origInput = input;
-            String rest1 = origInput.substring(origInput.indexOf('[')+1,k);
-            input = rest1;
-            direction = input;
-
-            for (int e = 0; e < bcount; e++){
-                direction = input;
-            }
-            if (origInput.length() - (k+1) != 0){
-                String rest2 = origInput.substring(k+1, origInput.length());
-                input = rest2;
-                for (int j = 0; j < bcount; j++){
-                    direction += normal;
+            String rest1 = input.substring(input.indexOf('[')+1,k);
+            String rest2 = null;
+            if(os.length() - (k+1) > 0){
+                rest2 = os.substring(k+1, os.length());
+                if(!isNested(rest1)){
+                    if(isNested(rest2)){
+                        decoded(rest2);
+                    }
+                    else {
+                        normal = decoded(rest1) + decoded(rest2);
+                    }
+                }
+                if(isNested(rest1)){
+                    decoded(rest1);
+                    if(!isNested(rest1)){
+                        normal = decoded(rest1);
+                    }
+                    else{
+                        decoded(rest1);
+                    }
                 }
             }
-            if (input.indexOf(']') == -1){
-                break;
+            else {
+                if (!isNested(rest1)) {
+                    normal = decoded(rest1);
+                    for (int e = 0; e<bcount; e++){
+                        direction += normal;
+                    }
+                }
+                if (isNested(rest1)) {
+                    decoded(rest1);
+                    if (!isNested(rest1)) {
+                        normal = decoded(rest1);
+                        for (int e = 0; e<bcount; e++){
+                            direction += normal;
+                        }
+                    } else {
+                        decoded(rest1);
+                    }
+                }
             }
 
-
         }
+
         if(bcount == 0){
             direction = normal;
         }
 
-        strings[0] = input;
-        strings[1] = direction;
-        return strings;
+
+        return direction;
     }
 
     public static void main(String[] args){
-        String s1 = "4[2[S]2[N]]";
-        //String s2 = "2[3[2[N]2[E]]2[W]]";
-        for (int i = 0; i<decoded(s1).length; i++){
-            System.out.println(decoded(s1)[i]);
-        }
+        String s1 = "3[N]2[S]1[W]";
+        String s2 = "2[3[2[N]2[E]]2[W]]";
+
+        System.out.println(decoded(s1));
+
 
         //System.out.println(isNested(s2));
 
