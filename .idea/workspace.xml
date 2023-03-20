@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="part 2 actionqueue">
+    <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="part 3 done.">
       <change afterPath="$PROJECT_DIR$/src/CompressedStringDecoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment2/Caterpillar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/Caterpillar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment2/ActionQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/ActionQueue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assignment2/Minitester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/Minitester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment2/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/World.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +70,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.Part3Test">
+  <component name="RunManager" selected="JUnit.Part3Test.worldStepTest3">
     <configuration name="Part2Test.aqLoadFromEncodedString_2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
@@ -154,10 +152,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Part3Test.worldStepTest3" />
         <item itemvalue="JUnit.Part3Test" />
         <item itemvalue="JUnit.Part3Test.worldStepTest2" />
         <item itemvalue="JUnit.Part2Test.aqLoadFromEncodedString_2" />
-        <item itemvalue="JUnit.Part3Test.worldStepTest3" />
         <item itemvalue="JUnit.Part3Test.worldStepTest1" />
       </list>
     </recent_temporary>
@@ -181,7 +179,7 @@
       <workItem from="1676358507353" duration="46000" />
       <workItem from="1676401320107" duration="1124000" />
       <workItem from="1678856010440" duration="12813000" />
-      <workItem from="1678940808043" duration="73414000" />
+      <workItem from="1678940808043" duration="73980000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1673040166236</created>
@@ -421,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679307866526</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="part 3 done.">
+      <created>1679311302385</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1679311302385</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,7 +444,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update" />
     <MESSAGE value="room class finished, waiting for the tests" />
     <MESSAGE value="update with new variable names for Airport and Room, finished Hotel" />
     <MESSAGE value="finished abstract Reservation" />
@@ -464,7 +468,8 @@
     <MESSAGE value="part 3 state" />
     <MESSAGE value="part 3 world" />
     <MESSAGE value="part 2 actionqueue" />
-    <option name="LAST_COMMIT_MESSAGE" value="part 2 actionqueue" />
+    <MESSAGE value="part 3 done." />
+    <option name="LAST_COMMIT_MESSAGE" value="part 3 done." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

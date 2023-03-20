@@ -1,8 +1,6 @@
 package assignment2;
 
 
-import java.util.Stack;
-
 public class ActionQueue extends MyQueue<Direction> {
 
     public ActionQueue() {

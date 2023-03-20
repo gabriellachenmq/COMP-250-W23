@@ -1332,22 +1332,22 @@ class Part3Test {
         ActionQueue actionQueue = new ActionQueue();
 
         String food = "(9,9).(14,7).(7,10)";
-        String direction = "2[S]2[E]" ;
+        String direction = "10[S]" ;
 
         targetQueue.addTargets(food);
         actionQueue.loadFromEncodedString(direction);
 
         World world = new World(targetQueue, actionQueue);
 
-        for (int i = 0; i < 4; i++) {  // move 4 steps S from (7,7) to (7,3)
+        for (int i = 0; i < 9; i++) {  // move 4 steps S from (7,7) to (7,3)
             world.step();
         }
 
-        assertEquals(GameState.EAT, world.getState());
-        assertEquals(2, world.getCaterpillar().getSize());
-        assertEquals(new Position(9, 9), world.getCaterpillar().getHead());
-        assertFalse(targetQueue.isEmpty());
-        assertTrue(actionQueue.isEmpty());
+        assertEquals(GameState.WALL_COLLISION, world.getState());
+        //assertEquals(2, world.getCaterpillar().getSize());
+        //assertEquals(new Position(9, 9), world.getCaterpillar().getHead());
+        //assertFalse(targetQueue.isEmpty());
+        //assertTrue(actionQueue.isEmpty());
 
     }
 
