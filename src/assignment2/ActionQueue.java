@@ -23,13 +23,19 @@ public class ActionQueue extends MyQueue<Direction> {
             char targetChar2 = ']';
             int count1 = 0;
             int count2 = 0;
-            for (int i = 1; i < input.length(); i++) {
+            for (int i = 0; i < input.length(); i++) {
                 char currChar = input.charAt(i);
                 if (currChar == targetChar1){
                     count1++;
                 }
                 if (currChar == targetChar2){
                     count2++;
+                }
+                if (currChar == '-' || currChar == ' '){
+                    throw new IllegalArgumentException("Invalid character");
+                }
+                else if (currChar == targetChar1 && input.charAt(i+1) == targetChar1){
+                    throw new IllegalArgumentException("Invalid syntax");
                 }
             }
             if (count1 == 0 && count2 == 0){
@@ -76,8 +82,12 @@ public class ActionQueue extends MyQueue<Direction> {
                     directionStr += normalStr;
                 }
                 loadFromDirectionsString(directionStr);
-                //directionStr = "";
-                //normalStr = "";
+                directionStr = "";
+                normalStr = "";
+            }
+
+            if (count1 % 2 == 0 && count2 % 2 == 0){
+
             }
 
         }
