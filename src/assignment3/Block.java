@@ -14,7 +14,7 @@ public class Block {
 
     private Block[] children; // {UR, UL, LL, LR}
 
-    public static Random gen = new Random(2);
+    public static Random gen = new Random();
 
 
     /*
@@ -118,6 +118,8 @@ public class Block {
         blockList.add(block1);
         blockList.add(block2);
         if (this.children.length != 0){
+            blockList.remove(blockList.size()-1);
+            blockList.remove(blockList.size()-1);
             blockList.addAll(this.children[0].getBlocksToDraw());
             blockList.addAll(this.children[1].getBlocksToDraw());
             blockList.addAll(this.children[2].getBlocksToDraw());
@@ -152,10 +154,29 @@ public class Block {
      * - if (x,y) is not within this Block, return null.
      */
     public Block getSelectedBlock(int x, int y, int lvl) {
-        /*
-         * ADD YOUR CODE HERE
-         */
-        return null;
+        Block selectedBlock = new Block();
+        if(lvl > this.maxDepth || lvl < 0){
+            throw new IllegalArgumentException("Invalid input.");
+        }
+        if(this.level<lvl && this.children.length != 0) {
+            for (Block child : this.children) {
+                if (child.inRange(x, y)) {
+                    if (child.level == lvl) {
+                        selectedBlock = child;
+                        return selectedBlock;
+                    }
+                }
+                selectedBlock = child.getSelectedBlock(x,y,lvl);
+                if(this.level < lvl && this.children.length == 0 && this.inRange(x,y)){
+                    return this;
+                }
+            }
+        }
+
+        return selectedBlock;
+    }
+    private boolean inRange(int x, int y){
+        return ((x < this.xCoord+this.size &&  x >= this.xCoord) && (y < this.yCoord+this.size &&  y >= this.yCoord));
     }
 
 
@@ -292,9 +313,11 @@ public class Block {
         }
     }
     public static void main(String[] args){
-        Block blockDepth2 = new Block(0,0);
-        blockDepth2.updateSizeAndPosition(16, 0, 0);
-        blockDepth2.printBlock();
+        Block.gen = new Random(4);
+        Block b = new Block(0, 3);
+        b.updateSizeAndPosition(16, 0, 0);
+        b.printBlock();
+
 
     }
 

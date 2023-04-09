@@ -69,7 +69,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.BlockGame">
+  <component name="RunManager" selected="JUnit.Part2Test.getSelectedBlock3">
     <configuration name="Block" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="assignment3.Block" />
       <module name="COMP250" />
@@ -83,20 +83,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BlockGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="assignment3.BlockGame" />
-      <module name="COMP250" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignment3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Part1Test.BlockConstructorTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Part2Test.getSelectedBlock1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
         <pattern>
@@ -105,14 +92,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="assignment3" />
-      <option name="MAIN_CLASS_NAME" value="assignment3.Part1Test" />
-      <option name="METHOD_NAME" value="BlockConstructorTest2" />
+      <option name="MAIN_CLASS_NAME" value="assignment3.Part2Test" />
+      <option name="METHOD_NAME" value="getSelectedBlock1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Part1Test.UpdateSizeAndPositionTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Part2Test.getSelectedBlock2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
         <pattern>
@@ -121,14 +108,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="assignment3" />
-      <option name="MAIN_CLASS_NAME" value="assignment3.Part1Test" />
-      <option name="METHOD_NAME" value="UpdateSizeAndPositionTest1" />
+      <option name="MAIN_CLASS_NAME" value="assignment3.Part2Test" />
+      <option name="METHOD_NAME" value="getSelectedBlock2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Part1Test.UpdateSizeAndPositionTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Part2Test.getSelectedBlock3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
         <pattern>
@@ -137,8 +124,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="assignment3" />
-      <option name="MAIN_CLASS_NAME" value="assignment3.Part1Test" />
-      <option name="METHOD_NAME" value="UpdateSizeAndPositionTest2" />
+      <option name="MAIN_CLASS_NAME" value="assignment3.Part2Test" />
+      <option name="METHOD_NAME" value="getSelectedBlock3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Part2Test.getSelectedBlock4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="COMP250" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment3" />
+      <option name="MAIN_CLASS_NAME" value="assignment3.Part2Test" />
+      <option name="METHOD_NAME" value="getSelectedBlock4" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -146,11 +149,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BlockGame" />
-        <item itemvalue="JUnit.Part1Test.UpdateSizeAndPositionTest2" />
-        <item itemvalue="JUnit.Part1Test.UpdateSizeAndPositionTest1" />
+        <item itemvalue="JUnit.Part2Test.getSelectedBlock3" />
+        <item itemvalue="JUnit.Part2Test.getSelectedBlock4" />
         <item itemvalue="Application.Block" />
-        <item itemvalue="JUnit.Part1Test.BlockConstructorTest2" />
+        <item itemvalue="JUnit.Part2Test.getSelectedBlock1" />
+        <item itemvalue="JUnit.Part2Test.getSelectedBlock2" />
       </list>
     </recent_temporary>
   </component>
@@ -175,7 +178,7 @@
       <workItem from="1678856010440" duration="12813000" />
       <workItem from="1678940808043" duration="75456000" />
       <workItem from="1680712833306" duration="265000" />
-      <workItem from="1680918249498" duration="11939000" />
+      <workItem from="1680918249498" duration="18747000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1673040166236</created>
@@ -436,7 +439,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680999180491</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="assignment3 part 1">
+      <created>1681003595894</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1681003595895</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -487,6 +497,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.util.EmptyStackException" package="java.util" />
           <option name="timeStamp" value="3" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="7" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
