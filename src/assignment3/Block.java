@@ -111,10 +111,19 @@ public class Block {
      * The order in which the blocks to draw appear in the list does NOT matter.
      */
     public ArrayList<BlockToDraw> getBlocksToDraw() {
-        /*
-         * ADD YOUR CODE HERE
-         */
-        return null;
+
+        ArrayList<BlockToDraw> blockList = new ArrayList<BlockToDraw>();
+        BlockToDraw block1 = new BlockToDraw(this.color,this.xCoord,this.yCoord,this.size,0);
+        BlockToDraw block2 = new BlockToDraw(GameColors.FRAME_COLOR, this.xCoord,this.yCoord,this.size,3);
+        blockList.add(block1);
+        blockList.add(block2);
+        if (this.children.length != 0){
+            blockList.addAll(this.children[0].getBlocksToDraw());
+            blockList.addAll(this.children[1].getBlocksToDraw());
+            blockList.addAll(this.children[2].getBlocksToDraw());
+            blockList.addAll(this.children[3].getBlocksToDraw());
+        }
+        return blockList;
     }
 
     /*
@@ -283,7 +292,7 @@ public class Block {
         }
     }
     public static void main(String[] args){
-        Block blockDepth2 = new Block(0,2);
+        Block blockDepth2 = new Block(0,0);
         blockDepth2.updateSizeAndPosition(16, 0, 0);
         blockDepth2.printBlock();
 
