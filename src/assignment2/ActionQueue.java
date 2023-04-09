@@ -92,6 +92,20 @@ public class ActionQueue extends MyQueue<Direction> {
             else if(count1 != 0 && count2 != 0) {
                 boolean a = isNested(input);
                 int bcount = 0;
+                int iLeft = input.indexOf('[');
+                int iRight = input.indexOf(']');
+                int digit = Character.getNumericValue(input.charAt(iLeft - 1));
+                if (iLeft >= 2) {
+                    if (Character.isDigit(input.charAt(iLeft - 2))) {
+                        digit = Character.getNumericValue(input.charAt(iLeft - 2)) * 10 + Character.getNumericValue(input.charAt(iLeft - 1));
+                    }
+                }
+                if (!Character.isDigit(input.charAt(iLeft - 1))) { //check if there is a int right in front of the []
+                    throw new IllegalArgumentException("Invalid syntax");
+                }
+                if ((iRight - iLeft) == 1) {
+                    throw new IllegalArgumentException("Invalid syntax");
+                }
                 while (!a) {
                     int fcount = Character.getNumericValue(input.charAt(input.indexOf('[') - 1));
                     for (int i = input.indexOf('[') + 1; i < input.indexOf(']'); i++) {

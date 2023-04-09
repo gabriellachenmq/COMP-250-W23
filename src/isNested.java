@@ -72,7 +72,18 @@ public class isNested {
             String rest2 = null;
 
             if (!isNested(rest1)) {
-                normal = decoded(rest1);
+                int count = Character.getNumericValue(rest1.charAt(input.indexOf('[')-1));
+                for (int i=rest1.indexOf('[')+1; i< rest1.indexOf(']'); i++){
+                    nested += rest1.charAt(i);
+                }
+                String rest = rest1.substring(input.indexOf(']')+1, rest1.length());
+                rest1 = rest;
+                fcount = count;
+                for (int e = 0; e < fcount; e++){
+                    normal += nested;
+                }
+
+                nested = "";
                 for (int e = 0; e<bcount; e++){
                     direction += normal;
                 }

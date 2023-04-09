@@ -6,8 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="part 3 done.">
       <change afterPath="$PROJECT_DIR$/src/CompressedStringDecoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assignment3/BlobGoal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assignment3/Block.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assignment3/BlockGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assignment3/BlockToDraw.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assignment3/GameColors.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assignment3/Goal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assignment3/PerimeterGoal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assignment3/Tester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assignment2/ActionQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/ActionQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment2/Minitester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/Minitester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/isNested.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/isNested.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,81 +79,79 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.Part3Test.worldStepTest3">
-    <configuration name="Part2Test.aqLoadFromEncodedString_2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.Part1Test.UpdateSizeAndPositionTest2">
+    <configuration name="Block" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="assignment3.Block" />
       <module name="COMP250" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="assignment2.*" />
+          <option name="PATTERN" value="assignment3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="assignment2" />
-      <option name="MAIN_CLASS_NAME" value="assignment2.Part2Test" />
-      <option name="METHOD_NAME" value="aqLoadFromEncodedString_2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Part1Test.BlockConstructorTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="COMP250" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment3" />
+      <option name="MAIN_CLASS_NAME" value="assignment3.Part1Test" />
+      <option name="METHOD_NAME" value="BlockConstructorTest2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Part3Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Part1Test.BlockConstructorTest3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="assignment2.*" />
+          <option name="PATTERN" value="assignment3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="assignment2" />
-      <option name="MAIN_CLASS_NAME" value="assignment2.Part3Test" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Part3Test.worldStepTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="COMP250" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignment2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="assignment2" />
-      <option name="MAIN_CLASS_NAME" value="assignment2.Part3Test" />
-      <option name="METHOD_NAME" value="worldStepTest1" />
+      <option name="PACKAGE_NAME" value="assignment3" />
+      <option name="MAIN_CLASS_NAME" value="assignment3.Part1Test" />
+      <option name="METHOD_NAME" value="BlockConstructorTest3" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Part3Test.worldStepTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Part1Test.UpdateSizeAndPositionTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="assignment2.*" />
+          <option name="PATTERN" value="assignment3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="assignment2" />
-      <option name="MAIN_CLASS_NAME" value="assignment2.Part3Test" />
-      <option name="METHOD_NAME" value="worldStepTest2" />
+      <option name="PACKAGE_NAME" value="assignment3" />
+      <option name="MAIN_CLASS_NAME" value="assignment3.Part1Test" />
+      <option name="METHOD_NAME" value="UpdateSizeAndPositionTest1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Part3Test.worldStepTest3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Part1Test.UpdateSizeAndPositionTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="assignment2.*" />
+          <option name="PATTERN" value="assignment3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="assignment2" />
-      <option name="MAIN_CLASS_NAME" value="assignment2.Part3Test" />
-      <option name="METHOD_NAME" value="worldStepTest3" />
+      <option name="PACKAGE_NAME" value="assignment3" />
+      <option name="MAIN_CLASS_NAME" value="assignment3.Part1Test" />
+      <option name="METHOD_NAME" value="UpdateSizeAndPositionTest2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -152,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Part3Test.worldStepTest3" />
-        <item itemvalue="JUnit.Part3Test" />
-        <item itemvalue="JUnit.Part3Test.worldStepTest2" />
-        <item itemvalue="JUnit.Part2Test.aqLoadFromEncodedString_2" />
-        <item itemvalue="JUnit.Part3Test.worldStepTest1" />
+        <item itemvalue="JUnit.Part1Test.UpdateSizeAndPositionTest2" />
+        <item itemvalue="JUnit.Part1Test.UpdateSizeAndPositionTest1" />
+        <item itemvalue="Application.Block" />
+        <item itemvalue="JUnit.Part1Test.BlockConstructorTest2" />
+        <item itemvalue="JUnit.Part1Test.BlockConstructorTest3" />
       </list>
     </recent_temporary>
   </component>
@@ -179,7 +186,9 @@
       <workItem from="1676358507353" duration="46000" />
       <workItem from="1676401320107" duration="1124000" />
       <workItem from="1678856010440" duration="12813000" />
-      <workItem from="1678940808043" duration="73980000" />
+      <workItem from="1678940808043" duration="75456000" />
+      <workItem from="1680712833306" duration="265000" />
+      <workItem from="1680918249498" duration="7770000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1673040166236</created>
@@ -426,7 +435,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679311302385</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="part 3 done.">
+      <created>1679311789650</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1679311789650</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
