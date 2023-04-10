@@ -52,7 +52,7 @@ public class Block {
         if(this.level<this.maxDepth){
             Double randomNumber = gen.nextDouble(1);
             if (randomNumber < Math.exp(-0.25 * this.level)){
-                this.children = subdivideBlock(lvl+1, maxDepth);;
+                this.children = subdivideBlock(lvl+1, maxDepth);
             }
             else{
                 this.color = GameColors.BLOCK_COLORS[gen.nextInt(4)];
@@ -306,9 +306,18 @@ public class Block {
      *
      */
     public boolean smash() {
-        /*
-         * ADD YOUR CODE HERE
-         */
+        if (this.level != 0 && this.level < this.maxDepth) {
+            if(this.children.length == 0){
+                this.children = subdivideBlock(this.level+1, this.maxDepth);
+                this.updateSizeAndPosition(this.size,this.xCoord,this.yCoord);
+                return true;
+            }
+            for (int i = 0; i < 4; i++) {
+                this.children[i] = new Block(this.children[i].level, this.children[i].maxDepth);
+            }
+            this.updateSizeAndPosition(this.size,this.xCoord,this.yCoord);
+            return true;
+        }
         return false;
     }
 
@@ -393,10 +402,6 @@ public class Block {
         }
     }
     public static void main(String[] args){
-        Block.gen = new Random(4);
-        Block b = new Block(0, 3);
-        b.updateSizeAndPosition(16, 0, 0);
-        b.printBlock();
 
 
     }
