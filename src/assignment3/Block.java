@@ -14,7 +14,7 @@ public class Block {
 
     private Block[] children; // {UR, UL, LL, LR}
 
-    public static Random gen = new Random();
+    public static Random gen = new Random(4);
 
 
     /*
@@ -217,8 +217,8 @@ public class Block {
         }
     }
 
-    private Block[] swapChildren(Block[] list, int direction){
-        if(direction == 0) {
+    private Block[] swapChildren(Block[] list, int action){
+        if(action == 0) {
             int size = list.length;
             for (int i = 0; i < size / 2; i++) {
                 Block temp = list[i];
@@ -226,7 +226,7 @@ public class Block {
                 list[size - i - 1] = temp;
             }
         }
-        if(direction == 1){
+        if(action == 1){
             // Swap elements at index 0 and 1
             Block temp = list[0];
             list[0] = list[1];
@@ -237,8 +237,25 @@ public class Block {
             list[2] = list[3];
             list[3] = temp;
         }
+        if(action == 2){// clockwise
+            Block temp = list[0];
+            // Shift all elements to the left by one index
+            for (int i = 0; i < list.length-1; i++) {
+                list[i] = list[i+1];
+            }
+            // Assign the value of the temporary variable to the last index
+            list[list.length-1] = temp;
+        }
+        if(action == 3){
+            Block temp = list[list.length-1];
+            // Shift all elements to the right by one index
+            for (int i = list.length-1; i > 0; i--) {
+                list[i] = list[i-1];
+            }
+            // Assign the value of the temporary variable to the first index
+            list[0] = temp;
+        }
         return list;
-
     }
 
 
@@ -249,9 +266,27 @@ public class Block {
      * counterclockwise. If this Block has no children, do nothing.
      */
     public void rotate(int direction) {
-        /*
-         * ADD YOUR CODE HERE
-         */
+        if(direction != 0 && direction != 1){
+            throw new IllegalArgumentException("invalid direction.");
+        }
+        if(direction == 0){
+            if(this.children.length != 0){
+                swapChildren(this.children,3);
+                this.updateSizeAndPosition(this.size,this.xCoord,this.yCoord);
+                for(int i=0; i<4; i++){
+                    this.children[i].rotate(0);
+                }
+            }
+        }
+        if(direction == 1){
+            if(this.children.length != 0) {
+                swapChildren(this.children,2);
+                this.updateSizeAndPosition(this.size,this.xCoord,this.yCoord);
+                for(int i=0; i<4; i++){
+                    this.children[i].rotate(1);
+                }
+            }
+        }
     }
 
 
