@@ -83,7 +83,7 @@ public class Block {
      *  coordinates of the top left corner of the block.
      */
     public void updateSizeAndPosition (int size, int xCoord, int yCoord) {
-        if(size <= 0 || size % 2 != 0){
+        if(size <= 0 || (size % 2 != 0 && size != 1)){
             throw new IllegalArgumentException("Invalid size.");
         }
         this.size = size;
@@ -194,9 +194,51 @@ public class Block {
      *
      */
     public void reflect(int direction) {
-        /*
-         * ADD YOUR CODE HERE
-         */
+        if(direction != 0 && direction != 1){
+            throw new IllegalArgumentException("invalid direction.");
+        }
+        if(direction == 0){
+            if(this.children.length != 0){
+                swapChildren(this.children,0);
+                this.updateSizeAndPosition(this.size,this.xCoord,this.yCoord);
+                for(int i=0; i<4; i++){
+                    this.children[i].reflect(0);
+                }
+            }
+        }
+        if(direction == 1){
+            if(this.children.length != 0) {
+                swapChildren(this.children,1);
+                this.updateSizeAndPosition(this.size,this.xCoord,this.yCoord);
+                for(int i=0; i<4; i++){
+                    this.children[i].reflect(1);
+                }
+            }
+        }
+    }
+
+    private Block[] swapChildren(Block[] list, int direction){
+        if(direction == 0) {
+            int size = list.length;
+            for (int i = 0; i < size / 2; i++) {
+                Block temp = list[i];
+                list[i] = list[size - i - 1];
+                list[size - i - 1] = temp;
+            }
+        }
+        if(direction == 1){
+            // Swap elements at index 0 and 1
+            Block temp = list[0];
+            list[0] = list[1];
+            list[1] = temp;
+
+            // Swap elements at index 2 and 3
+            temp = list[2];
+            list[2] = list[3];
+            list[3] = temp;
+        }
+        return list;
+
     }
 
 

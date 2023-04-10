@@ -317,7 +317,7 @@ class Part2Test {  // ========= 12 points =========
         children[3] = new Block(1, 1, 1, 1, 1, GameColors.BLUE, new Block[0]);  // LR
         Block b = new Block(0, 0, 2, 0, 1, null, children);
 
-        b.reflect(0);  // reflect horizontally
+        b.reflect(1);  // reflect horizontally
 
         Field childrenField = Block.class.getDeclaredField("children");
         Field colorField = Block.class.getDeclaredField("color");
@@ -326,7 +326,7 @@ class Part2Test {  // ========= 12 points =========
 
         Block[] childrenLevel1 = (Block[]) childrenField.get(b);
 
-        List<Color> expected = List.of(GameColors.BLUE, GameColors.GREEN, GameColors.RED, GameColors.YELLOW);
+        List<Color> expected = List.of(GameColors.RED, GameColors.YELLOW, GameColors.BLUE, GameColors.GREEN);
         List<Color> actual = new ArrayList<>();
 
         for (Block child : childrenLevel1) {

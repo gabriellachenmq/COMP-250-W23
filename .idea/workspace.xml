@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="assignment3 part 2">
+    <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="assignment3 part 2-1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assignment3/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment3/Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/Tester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,39 +70,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.Part2Test.getSelectedBlock4">
-    <configuration name="Part1Test.GetBlocksToDrawTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="COMP250" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignment3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="assignment3" />
-      <option name="MAIN_CLASS_NAME" value="assignment3.Part1Test" />
-      <option name="METHOD_NAME" value="GetBlocksToDrawTest1" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Part2Test.getSelectedBlock1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="COMP250" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignment3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="assignment3" />
-      <option name="MAIN_CLASS_NAME" value="assignment3.Part2Test" />
-      <option name="METHOD_NAME" value="getSelectedBlock1" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.Part2Test.reflect2">
     <configuration name="Part2Test.getSelectedBlock2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
@@ -150,13 +119,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Part2Test.reflect1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="COMP250" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment3" />
+      <option name="MAIN_CLASS_NAME" value="assignment3.Part2Test" />
+      <option name="METHOD_NAME" value="reflect1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Part2Test.reflect2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="COMP250" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment3" />
+      <option name="MAIN_CLASS_NAME" value="assignment3.Part2Test" />
+      <option name="METHOD_NAME" value="reflect2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Part2Test.reflect2" />
+        <item itemvalue="JUnit.Part2Test.reflect1" />
         <item itemvalue="JUnit.Part2Test.getSelectedBlock4" />
         <item itemvalue="JUnit.Part2Test.getSelectedBlock3" />
         <item itemvalue="JUnit.Part2Test.getSelectedBlock2" />
-        <item itemvalue="JUnit.Part2Test.getSelectedBlock1" />
-        <item itemvalue="JUnit.Part1Test.GetBlocksToDrawTest1" />
       </list>
     </recent_temporary>
   </component>
@@ -182,7 +183,7 @@
       <workItem from="1678940808043" duration="75456000" />
       <workItem from="1680712833306" duration="265000" />
       <workItem from="1680918249498" duration="21077000" />
-      <workItem from="1681081986513" duration="7029000" />
+      <workItem from="1681081986513" duration="13527000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1673040166236</created>
@@ -457,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681016095479</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="assignment3 part 2-1">
+      <created>1681090525871</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1681090525872</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -475,7 +483,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="finished abstract Reservation" />
     <MESSAGE value="finished FlightReservation" />
     <MESSAGE value="finished HotelReservation" />
     <MESSAGE value="finished BnBReservation" />
@@ -500,7 +507,8 @@
     <MESSAGE value="part 3 done." />
     <MESSAGE value="assignment3 part 1" />
     <MESSAGE value="assignment3 part 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="assignment3 part 2" />
+    <MESSAGE value="assignment3 part 2-1" />
+    <option name="LAST_COMMIT_MESSAGE" value="assignment3 part 2-1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
