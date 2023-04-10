@@ -10,10 +10,32 @@ public class PerimeterGoal extends Goal{
 
     @Override
     public int score(Block board) {
-        /*
-         * ADD YOUR CODE HERE
-         */
-        return 0;
+        int score = 0;
+        Color[][] blockArr = board.flatten();
+        int rowCount = blockArr.length;
+        int colCount = blockArr[0].length;
+        for(int col = 0; col < colCount; col++){
+            Color top = blockArr[0][col];
+            Color bottom = blockArr[rowCount - 1][col];
+            if(top.equals(this.targetGoal)){
+                score++;
+            }
+            if(bottom.equals(this.targetGoal)){
+                score++;
+            }
+        }
+        for (int row = 0; row < rowCount; row++) {
+            Color left = blockArr[row][0];
+            Color right = blockArr[row][colCount - 1];
+            if(left.equals(this.targetGoal)){
+                score++;
+            }
+            if(right.equals(this.targetGoal)){
+                score++;
+            }
+        }
+
+        return score;
     }
 
     @Override
