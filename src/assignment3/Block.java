@@ -14,7 +14,7 @@ public class Block {
 
     private Block[] children; // {UR, UL, LL, LR}
 
-    public static Random gen = new Random(4);
+    public static Random gen = new Random(2);
 
 
     /*
@@ -331,10 +331,16 @@ public class Block {
      * arr[0][0] is the color of the unit cell in the upper left corner of this Block.
      */
     public Color[][] flatten() {
-        /*
-         * ADD YOUR CODE HERE
-         */
-        return null;
+        int numOfIndex = (int)Math.pow(2,this.maxDepth);
+        Color[][] arr = new Color[numOfIndex][numOfIndex];
+        int unitSize = this.size/(int)Math.pow(2,this.maxDepth);
+        for(int x = 0; x<numOfIndex; x++){
+            for(int y = 0; y<numOfIndex; y++){
+                Block block = getSelectedBlock(x*unitSize,y*unitSize,this.maxDepth);
+                arr[y][x] = block.color;
+            }
+        }
+        return arr;
     }
 
 
@@ -402,6 +408,9 @@ public class Block {
         }
     }
     public static void main(String[] args){
+        Block blockDepth3 = new Block(0,2);
+        blockDepth3.updateSizeAndPosition(16, 0, 0);
+        blockDepth3.printColoredBlock();
 
 
     }

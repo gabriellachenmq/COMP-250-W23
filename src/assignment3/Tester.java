@@ -464,7 +464,7 @@ class Part3Test {  // ======== 16 points ========
                 {GameColors.YELLOW, GameColors.YELLOW, GameColors.RED, GameColors.BLUE},
                 {GameColors.YELLOW, GameColors.YELLOW, GameColors.YELLOW, GameColors.BLUE}
         };
-
+        assertEquals(expected[0][2], c[0][2]);
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 assertEquals(expected[i][j], c[i][j]);
@@ -490,12 +490,13 @@ class Part3Test {  // ======== 16 points ========
                 {GameColors.YELLOW, GameColors.BLUE},
                 {GameColors.RED, GameColors.GREEN}
         };
-
+        //assertEquals(expected[1][0], c[1][0]);
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 2; j++) {
                 assertEquals(expected[i][j], c[i][j]);
             }
         }
+
     }
 
     @Test
