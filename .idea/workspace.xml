@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="assignment3 part 1">
+    <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="assignment3 part 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assignment3/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/Block.java" afterDir="false" />
     </list>
@@ -69,9 +69,8 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.Part2Test.getSelectedBlock3">
-    <configuration name="Block" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="assignment3.Block" />
+  <component name="RunManager" selected="JUnit.Part2Test.getSelectedBlock4">
+    <configuration name="Part1Test.GetBlocksToDrawTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
         <pattern>
@@ -79,6 +78,10 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="assignment3" />
+      <option name="MAIN_CLASS_NAME" value="assignment3.Part1Test" />
+      <option name="METHOD_NAME" value="GetBlocksToDrawTest1" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -149,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Part2Test.getSelectedBlock3" />
         <item itemvalue="JUnit.Part2Test.getSelectedBlock4" />
-        <item itemvalue="Application.Block" />
-        <item itemvalue="JUnit.Part2Test.getSelectedBlock1" />
+        <item itemvalue="JUnit.Part2Test.getSelectedBlock3" />
         <item itemvalue="JUnit.Part2Test.getSelectedBlock2" />
+        <item itemvalue="JUnit.Part2Test.getSelectedBlock1" />
+        <item itemvalue="JUnit.Part1Test.GetBlocksToDrawTest1" />
       </list>
     </recent_temporary>
   </component>
@@ -178,7 +181,8 @@
       <workItem from="1678856010440" duration="12813000" />
       <workItem from="1678940808043" duration="75456000" />
       <workItem from="1680712833306" duration="265000" />
-      <workItem from="1680918249498" duration="18747000" />
+      <workItem from="1680918249498" duration="21077000" />
+      <workItem from="1681081986513" duration="7029000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1673040166236</created>
@@ -446,7 +450,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681003595895</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="assignment3 part 2">
+      <created>1681016095479</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1681016095479</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,7 +475,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update with new variable names for Airport and Room, finished Hotel" />
     <MESSAGE value="finished abstract Reservation" />
     <MESSAGE value="finished FlightReservation" />
     <MESSAGE value="finished HotelReservation" />
@@ -489,7 +499,8 @@
     <MESSAGE value="part 2 actionqueue" />
     <MESSAGE value="part 3 done." />
     <MESSAGE value="assignment3 part 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="assignment3 part 1" />
+    <MESSAGE value="assignment3 part 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="assignment3 part 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -83,7 +83,7 @@ public class Block {
      *  coordinates of the top left corner of the block.
      */
     public void updateSizeAndPosition (int size, int xCoord, int yCoord) {
-        if(size < 0 || size % 2 != 0){
+        if(size <= 0 || size % 2 != 0){
             throw new IllegalArgumentException("Invalid size.");
         }
         this.size = size;
@@ -155,24 +155,27 @@ public class Block {
      */
     public Block getSelectedBlock(int x, int y, int lvl) {
         Block selectedBlock = new Block();
-        if(lvl > this.maxDepth || lvl < 0){
+        if(lvl > this.maxDepth || lvl < this.level){
             throw new IllegalArgumentException("Invalid input.");
         }
-        if(this.level<lvl && this.children.length != 0) {
+        else if(!this.inRange(x,y)){
+            return null;
+        }
+        if(this.level<lvl && this.children.length != 0 && this.inRange(x,y)) {
             for (Block child : this.children) {
                 if (child.inRange(x, y)) {
                     if (child.level == lvl) {
                         selectedBlock = child;
-                        return selectedBlock;
                     }
-                }
-                selectedBlock = child.getSelectedBlock(x,y,lvl);
-                if(this.level < lvl && this.children.length == 0 && this.inRange(x,y)){
-                    return this;
+                    else if (child.level < lvl){
+                        selectedBlock = child.getSelectedBlock(x,y,lvl);
+                    }
                 }
             }
         }
-
+        else{
+            return this;
+        }
         return selectedBlock;
     }
     private boolean inRange(int x, int y){
