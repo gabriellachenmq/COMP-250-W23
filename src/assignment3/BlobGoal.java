@@ -10,10 +10,18 @@ public class BlobGoal extends Goal {
 
     @Override
     public int score(Block board) {
-        /*
-         * ADD YOUR CODE HERE
-         */
-        return 0;
+        Color[][] blockArr = board.flatten();
+        boolean[][] vidited = new boolean[blockArr.length][blockArr[0].length];
+        int score = undiscoveredBlobSize(0,0,blockArr,vidited);
+        for(int i=0; i<blockArr.length; i++){
+            for(int j=0; j<blockArr.length; j++){
+                int temp = undiscoveredBlobSize(i,j,blockArr,vidited);
+                if (temp>score){
+                    score = temp;
+                }
+            }
+        }
+        return score;
     }
 
     @Override
