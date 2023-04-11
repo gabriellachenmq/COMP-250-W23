@@ -317,7 +317,37 @@ class Part2Test {  // ========= 12 points =========
         children[3] = new Block(1, 1, 1, 1, 1, GameColors.BLUE, new Block[0]);  // LR
         Block b = new Block(0, 0, 2, 0, 1, null, children);
 
-        b.reflect(1);  // reflect horizontally
+        b.reflect(0);  // reflect horizontally
+
+        Field childrenField = Block.class.getDeclaredField("children");
+        Field colorField = Block.class.getDeclaredField("color");
+        childrenField.setAccessible(true);
+        colorField.setAccessible(true);
+
+        Block[] childrenLevel1 = (Block[]) childrenField.get(b);
+
+        List<Color> expected = List.of(GameColors.BLUE, GameColors.GREEN, GameColors.RED, GameColors.YELLOW);
+        List<Color> actual = new ArrayList<>();
+
+        for (Block child : childrenLevel1) {
+            actual.add((Color) colorField.get(child));
+        }
+
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    @DisplayName("Block reflect() test3")
+    void reflect3() throws NoSuchFieldException, IllegalAccessException {
+        Block[] children = new Block[4];
+        children[0] = new Block(1, 0, 1, 1, 1, GameColors.YELLOW, new Block[0]);  // UR
+        children[1] = new Block(0, 0, 1, 1, 1, GameColors.RED, new Block[0]);   // UL
+        children[2] = new Block(0, 1, 1, 1, 1, GameColors.GREEN, new Block[0]); // LL
+        children[3] = new Block(1, 1, 1, 1, 1, GameColors.BLUE, new Block[0]);  // LR
+        Block b = new Block(0, 0, 2, 0, 1, null, children);
+
+        b.reflect(1);  // reflect vertically
 
         Field childrenField = Block.class.getDeclaredField("children");
         Field colorField = Block.class.getDeclaredField("color");
@@ -337,6 +367,7 @@ class Part2Test {  // ========= 12 points =========
 
     }
 
+
     @Test
     @Tag("score:1")
     @DisplayName("Block rotate() test1")
@@ -350,6 +381,36 @@ class Part2Test {  // ========= 12 points =========
     @Tag("score:1")
     @DisplayName("Block rotate() test2")
     void rotate2() throws NoSuchFieldException, IllegalAccessException {
+        Block[] children = new Block[4];
+        children[0] = new Block(1, 0, 1, 1, 1, GameColors.GREEN, new Block[0]);  // UR
+        children[1] = new Block(0, 0, 1, 1, 1, GameColors.BLUE, new Block[0]);   // UL
+        children[2] = new Block(0, 1, 1, 1, 1, GameColors.RED, new Block[0]); // LL
+        children[3] = new Block(1, 1, 1, 1, 1, GameColors.BLUE, new Block[0]);  // LR
+
+        Block b = new Block(0, 0, 2, 0, 1, null, children);
+
+        b.rotate(1); // rotate clockwise
+
+        Field childrenField = Block.class.getDeclaredField("children");
+        Field colorField = Block.class.getDeclaredField("color");
+        childrenField.setAccessible(true);
+        colorField.setAccessible(true);
+
+        Block[] childrenLevel1 = (Block[]) childrenField.get(b);
+
+        List<Color> expected = List.of(GameColors.BLUE, GameColors.RED, GameColors.BLUE, GameColors.GREEN);
+
+        List<Color> actual = new ArrayList<>();
+        for (Block child : childrenLevel1) {
+            actual.add((Color) colorField.get(child));
+        }
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("Block rotate() test3")
+    void rotate3() throws NoSuchFieldException, IllegalAccessException {
         Block[] children = new Block[4];
         children[0] = new Block(1, 0, 1, 1, 1, GameColors.GREEN, new Block[0]);  // UR
         children[1] = new Block(0, 0, 1, 1, 1, GameColors.BLUE, new Block[0]);   // UL
@@ -464,7 +525,7 @@ class Part3Test {  // ======== 16 points ========
                 {GameColors.YELLOW, GameColors.YELLOW, GameColors.RED, GameColors.BLUE},
                 {GameColors.YELLOW, GameColors.YELLOW, GameColors.YELLOW, GameColors.BLUE}
         };
-        assertEquals(expected[0][2], c[0][2]);
+
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 assertEquals(expected[i][j], c[i][j]);
@@ -490,13 +551,12 @@ class Part3Test {  // ======== 16 points ========
                 {GameColors.YELLOW, GameColors.BLUE},
                 {GameColors.RED, GameColors.GREEN}
         };
-        //assertEquals(expected[1][0], c[1][0]);
+
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 2; j++) {
                 assertEquals(expected[i][j], c[i][j]);
             }
         }
-
     }
 
     @Test

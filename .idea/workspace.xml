@@ -7,6 +7,7 @@
     <list default="true" id="cbd1622e-dedd-4f16-b559-834335e87fc1" name="Changes" comment="assignment3 BlobGoal finished">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assignment3/BlobGoal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/BlobGoal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment3/Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment3/Tester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +70,20 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.Part3Test">
+  <component name="RunManager" selected="Application.BlockGame">
+    <configuration name="BlockGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="assignment3.BlockGame" />
+      <module name="COMP250" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Part1Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP250" />
       <extension name="coverage">
@@ -131,29 +145,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Part3Test.BGscore4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="COMP250" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignment3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="assignment3" />
-      <option name="MAIN_CLASS_NAME" value="assignment3.Part3Test" />
-      <option name="METHOD_NAME" value="BGscore4" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BlockGame" />
         <item itemvalue="JUnit.Part3Test" />
-        <item itemvalue="JUnit.Part1Test" />
         <item itemvalue="JUnit.Part2Test" />
+        <item itemvalue="JUnit.Part1Test" />
         <item itemvalue="JUnit.Part3Test.BGscore2" />
-        <item itemvalue="JUnit.Part3Test.BGscore4" />
       </list>
     </recent_temporary>
   </component>
@@ -180,7 +178,7 @@
       <workItem from="1680712833306" duration="265000" />
       <workItem from="1680918249498" duration="21077000" />
       <workItem from="1681081986513" duration="21560000" />
-      <workItem from="1681150419891" duration="13864000" />
+      <workItem from="1681150419891" duration="14652000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1673040166236</created>
@@ -497,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681168517433</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="assignment3 BlobGoal finished">
+      <created>1681173057983</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1681173057983</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
